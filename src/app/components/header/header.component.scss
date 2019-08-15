@@ -1,0 +1,64 @@
+.cust-main-navbar {
+  background-color: #2e2e2e !important;
+  padding: .5rem 3rem !important;
+
+  .navbar-brand{
+    color: #f6305e;
+    margin-right: 25vh;
+  }
+
+  .nav-item {
+    padding: 0 10px;
+  }
+
+  .cust-menu-bar {
+    margin-right: 20vh !important;
+  }
+
+  .cust-search-form {
+    margin-right: 10vh;
+    position: relative;
+
+    .search-icon {
+      color: #fff;
+      left: 16px;
+      position: absolute;
+      top: 10px;
+    }
+
+    input {
+      background-color: #969696;
+      border: 0;
+      border-radius: 24px;
+      color: #fff;
+      height: calc(1.4em + .75rem + 2px);
+      line-height: 1.4;
+      padding-left: 40px;
+      width: 300px;
+
+      &::placeholder {
+        color: #fff;
+        opacity: 1;
+      }
+    }
+  }
+
+  .shopping-cart {
+    padding: 10px 24px;
+
+    .fa {
+      color: #fff;
+      font-size: 18px;
+    }
+
+    span {
+      background-color: #f6305e;
+      border-radius: 45%;
+      color: #fff;
+      padding: 5px 8px;
+      position: absolute;
+      right: 5px;
+      top: 0;
+    }
+  }
+}
