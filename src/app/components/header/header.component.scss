@@ -1,9 +1,11 @@
+@import '../../../variables';
+
 .cust-main-navbar {
-  background-color: #2e2e2e !important;
+  background-color: $bg-black !important;
   padding: .5rem 3rem !important;
 
-  .navbar-brand{
-    color: #f6305e;
+  .navbar-brand {
+    color: $our-redish;
     margin-right: 25vh;
   }
 
@@ -20,24 +22,24 @@
     position: relative;
 
     .search-icon {
-      color: #fff;
+      color: $white;
       left: 16px;
       position: absolute;
       top: 10px;
     }
 
     input {
-      background-color: #969696;
+      background-color: $our-gray;
       border: 0;
       border-radius: 24px;
-      color: #fff;
+      color: $white;
       height: calc(1.4em + .75rem + 2px);
       line-height: 1.4;
       padding-left: 40px;
       width: 300px;
 
       &::placeholder {
-        color: #fff;
+        color: $white;
         opacity: 1;
       }
     }
@@ -47,14 +49,14 @@
     padding: 10px 24px;
 
     .fa {
-      color: #fff;
+      color: $white;
       font-size: 18px;
     }
 
     span {
-      background-color: #f6305e;
+      background-color: $our-redish;
       border-radius: 45%;
-      color: #fff;
+      color: $white;
       padding: 5px 8px;
       position: absolute;
       right: 5px;
