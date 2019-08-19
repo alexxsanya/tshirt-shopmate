@@ -1,0 +1,41 @@
+@import '../../../variables';
+
+.app-banner {
+  background-color: $our-gray;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 30px auto;
+  min-height: 60vh;
+  padding: 80px 100px;
+  width: 93%;
+
+  .banner-title {
+    display: flex;
+    font-size: 3.4em;
+    margin-bottom: 20px;
+    min-height: 50px;
+    width: 100%;
+  }
+
+  .banner-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 80%;
+
+    a {
+      color: $white;
+      flex: 1 1 33.3%;
+      font-size: 1.3em;
+      height: 30px;
+      min-width: 150px;
+
+      &:hover {
+        color: #cecece;
+        text-decoration: none;
+      }
+    }
+
+  }
+}
