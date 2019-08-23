@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Params, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { titleCase } from 'src/app/shared/util/tools';
+import { DepartmentsService } from 'src/app/services/departments.service';
+import { Department, Category } from 'src/app/models';
+
 @Component({
   selector: 'app-banner',
   templateUrl: './banner.component.html',
@@ -9,17 +12,15 @@ import { titleCase } from 'src/app/shared/util/tools';
 export class BannerComponent implements OnInit {
 
   banner_title: string;
-  banner_categories: Array<String>;
+  banner_desc: string;
+  banner_categories: Array<Category>;
   feature_image: object;
   banner_image: object;
-  
-  constructor(private activatedRoute: ActivatedRoute) { 
+  departments: any;
+  ;
+  constructor(private activatedRoute: ActivatedRoute, private departmentService: DepartmentsService) { 
     this.banner_title = 'Mens Wear'
-    this.banner_categories = new Array (
-      'French',
-      'Italian',
-      'Irish',
-    );
+    this.banner_categories = new Array ();
 
     this.banner_image = {
       regional: [
@@ -46,15 +47,36 @@ export class BannerComponent implements OnInit {
 
   }
 
-  ngOnInit() {
-    this.activatedRoute.params.subscribe(queryParams => {
-      let dept = queryParams.dept_name;
+  async ngOnInit() {
+
+    await this.departmentService.getDepartments().then(data => {
+      this.departments = data
+    });
+
+    this.activatedRoute.params.subscribe(async queryParams => {
+      let dept: string = queryParams.dept_name;
+
       if(dept !== undefined) {
+
+        const department: Array<Department> =  this.departments.filter(function(department) {
+          return department.name == titleCase(dept);
+        });
+
+        this.banner_categories = await this.getCategories(department[0].department_id);
         this.banner_title = titleCase(dept)+' t-shirts';
+        this.banner_desc = department[0].description;
         const position =  Math.floor(Math.random() * (this.banner_image[dept].length - 1));
         this.feature_image = this.banner_image[dept][position];
       }
     });
+  }
+
+  getCategories(dept_id: number){
+    let cats: any = [];
+    cats = this.departmentService.getDepartmentCategories(dept_id).then(categories => {
+      return categories;
+    });
+    return cats;
   }
 
 }

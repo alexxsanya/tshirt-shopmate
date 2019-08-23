@@ -1,8 +1,13 @@
-<div class="app-banner" [style.backgroundImage]="'url('+feature_image+')'">
-    <h2 class="banner-title">{{banner_title}}</h2>
-    <div class="banner-items">
-        <a href="#" *ngFor="let item of banner_categories"> 
-            {{item}} 
-        </a>
+<div class="banner-container">
+    <div class="app-banner" [style.backgroundImage]="'url('+feature_image+')'">
+        <h2 class="banner-title">{{banner_title}}</h2>
+        <h3>{{banner_desc}}</h3>
+        <div class="banner-items">
+            <div *ngFor="let item of banner_categories"> 
+                <a [routerLink]=item.name> 
+                    {{item.name}} 
+                </a>
+            </div>
+        </div>
     </div>
 </div>
