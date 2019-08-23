@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Department } from 'src/app/models';
+import { Department, Category } from 'src/app/models';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -10,8 +10,14 @@ export class DepartmentsService {
 
   constructor(private http: HttpClient) { }
 
-  getDepartments() {
-    return this.http.get<Department>(`${environment.api_url}//departments`);
+  async getDepartments(): Promise<Department> {
+    return await this.http.get<Department>(`${environment.api_url}/departments`)
+    .toPromise();
+  }
+
+  async getDepartmentCategories(dept_id: number): Promise<Category>{
+    return await this.http.get<Category>(`${environment.api_url}/categories/inDepartment/${dept_id}`)
+    .toPromise();
   }
 
 }
