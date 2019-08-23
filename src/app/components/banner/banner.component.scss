@@ -1,45 +1,63 @@
 @import '../../../variables';
 
-.app-banner {
-  background-color: $our-gray;
-  background-image: url('https://www.pngarts.com/files/5/Black-Blazer-PNG-High-Quality-Image.png');
-  background-position: right 40px center;
-  background-repeat: no-repeat;
-  background-size: 30% 90%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin: 30px auto;
-  min-height: 60vh;
-  padding: 80px 100px;
-  width: 93%;
-
-  .banner-title {
+.banner-container {
+    // background-color: $our-gray;
+    background: linear-gradient(90deg, #aca9a3 62%, #626765 95%), url('https://www.pngarts.com/files/5/Black-Blazer-PNG-High-Quality-Image.png');
     display: flex;
-    font-size: 3.4em;
-    margin-bottom: 20px;
-    min-height: 50px;
-    width: 100%;
-  }
-
-  .banner-items {
-    display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
-    width: 80%;
+    margin: 30px auto;
+    width: 93%;
 
-    a {
-      color: $white;
-      flex: 1 1 33.3%;
-      font-size: 1.3em;
-      height: 30px;
-      min-width: 150px;
+    .app-banner {
+    background-position: right 40px center;
+    background-repeat: no-repeat;
+    background-size: 30% 90%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-height: 60vh;
+    padding: 80px 100px;
+    width: 100%;
 
-      &:hover {
-        color: #cecece;
-        text-decoration: none;
-      }
+    .banner-title {
+      color: #f6305e;
+      display: flex;
+      font-size: 3.4em;
+      font-weight: 400;
+      margin-bottom: 5px;
+      width: 100%;
     }
 
+    .banner-items {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 60%;
+      min-width: 20%;
+
+      div a {
+        color: $white;
+        flex: 1 1 33.3%;
+        font-size: 1.3em;
+        height: 30px;
+        min-width: 150px;
+
+        &:hover {
+          color: #cecece;
+          text-decoration: none;
+        }
+      }
+
+    }
+
+    h3 {
+      color: $white;
+      display: flex;
+      font-weight: 200;
+      margin-bottom: 50px;
+      text-shadow: 2px 2px 4px #000000;
+      width: 90%;
+    }
   }
 }
