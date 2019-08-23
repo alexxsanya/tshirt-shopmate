@@ -1,1 +1,1 @@
-export { Department } from './department';
+export { Department, Category } from './department';
