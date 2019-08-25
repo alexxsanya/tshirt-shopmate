@@ -7,6 +7,7 @@
   .navbar-brand {
     color: $our-redish;
     margin-right: 25vh;
+    text-shadow: 1px 1px 2px $black;
   }
 
   .nav-item {
@@ -46,6 +47,7 @@
   }
 
   .shopping-cart {
+    cursor: pointer;
     padding: 10px 24px;
 
     .fa {
