@@ -1,15 +1,15 @@
 @import '../../../variables';
 
 .banner-container {
-    // background-color: $our-gray;
-    background: linear-gradient(90deg, #aca9a3 62%, #626765 95%), url('https://www.pngarts.com/files/5/Black-Blazer-PNG-High-Quality-Image.png');
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin: 30px auto;
-    width: 93%;
+  background: linear-gradient(90deg, #aca9a3 62%, #626765 95%),
+  url('https://www.pngarts.com/files/5/Black-Blazer-PNG-High-Quality-Image.png');
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 30px auto;
+  width: 93%;
 
-    .app-banner {
+  .app-banner {
     background-position: right 40px center;
     background-repeat: no-repeat;
     background-size: 30% 90%;
@@ -21,7 +21,7 @@
     width: 100%;
 
     .banner-title {
-      color: #f6305e;
+      color: $our-redish;
       display: flex;
       font-size: 3.4em;
       font-weight: 400;
@@ -56,7 +56,7 @@
       display: flex;
       font-weight: 200;
       margin-bottom: 50px;
-      text-shadow: 2px 2px 4px #000000;
+      text-shadow: 2px 2px 4px $black;
       width: 90%;
     }
   }
