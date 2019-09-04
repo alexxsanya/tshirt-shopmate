@@ -2,11 +2,14 @@
 
 .cust-main-navbar {
   background-color: $bg-black !important;
-  padding: .5rem 3rem !important;
+  margin: 0 auto;
+  max-width: 1500px;
+  min-width: 1024px;
+  padding: .5rem 3rem;
 
   .navbar-brand {
     color: $our-redish;
-    margin-right: 25vh;
+    // margin-right: 25vh;
     text-shadow: 1px 1px 2px $black;
   }
 
@@ -15,11 +18,11 @@
   }
 
   .cust-menu-bar {
-    margin-right: 20vh !important;
+    // margin-right: 20vh !important;
   }
 
   .cust-search-form {
-    margin-right: 10vh;
+    // margin-right: 10vh;
     position: relative;
 
     .search-icon {
@@ -65,4 +68,25 @@
       top: 0;
     }
   }
+}
+
+@media screen and (max-width: 600px) {
+  .cust-main-navbar {
+    max-width: 100%;
+    min-width: 100%;
+    padding: 10px 5px;
+
+    .navbar-brand {
+      margin-left: 5px;
+    }
+
+    .navbar-toggler {
+      display: block;
+      position: absolute;
+      right: 5px;
+    }
+
+    .menu {display: none !important;}
+  }
+
 }

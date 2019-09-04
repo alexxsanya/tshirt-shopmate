@@ -1,10 +1,7 @@
 <nav class="navbar navbar-expand sticky-top navbar-dark bg-dark cust-main-navbar">
     <a class="navbar-brand" href="/">TURING SHOPMATE</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="/homenavbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
   
-    <div class="collapse navbar-collapse" id="navbarSupportedContent" style="padding: 0 0 0 24px;">
+    <div class="collapse navbar-collapse menu" [ngClass]="{ 'show': isShown }" id="navbar-menu">
       <ul class="navbar-nav mr-5 cust-menu-bar" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
         <li class="nav-item">
           <a class="nav-link" routerLink="dept/regional" 
@@ -18,7 +15,7 @@
             <a class="nav-link" routerLink="dept/seasonal" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Seasonal</a>
         </li>
       </ul>
-      <form class="form-inline my-2 my-lg-0 mr-auto cust-search-form">
+      <form class="form-inline my-lg-0 mr-auto cust-search-form">
           <i class="fa fa-search search-icon"></i>
         <input class="form-control mr-sm-2" type="search" placeholder="search anything" aria-label="Search">
       </form>
@@ -27,4 +24,10 @@
         <span class="badge badge-light">4</span>
       </div>
     </div>
+
+    <button class="navbar-toggler" type="button" 
+      data-toggle="collapse" data-target="#navbar-menu"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
   </nav>

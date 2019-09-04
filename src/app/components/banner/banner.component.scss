@@ -61,3 +61,48 @@
     }
   }
 }
+
+@media screen and (max-width: 600px) {
+  .banner-container {
+    margin: 0 auto;
+    width: 100%;
+
+    .app-banner {
+      background-position: right 5px center;
+      min-height: 10vh;
+      padding: 5px 10px;
+
+      .banner-title {
+        font-size: 1.5em;
+        margin-bottom: 5px;
+      }
+
+      .banner-items {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        max-width: 60%;
+        min-width: 20%;
+        
+        div {
+          margin-right: 5px;
+
+          a {
+            font-size: 1rem;
+          }
+        }
+
+      }
+
+      h3 {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+        max-width: 75ch;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+
+}
