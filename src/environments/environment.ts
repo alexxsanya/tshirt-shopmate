@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   api_url: 'https://backendapi.turing.com',
+  img_uri: 'https://backendapi.turing.com/images/products/',
 };
 
 /*
