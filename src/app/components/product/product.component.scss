@@ -12,6 +12,7 @@
   .app-cover-info {
     align-content: center;
     align-items: center;
+    animation: bg-animation cubic-bezier(.175, .885, .32, 1.275) ;
     background: rgba($white, .95) ;
     display: flex;
     flex-direction: column;
@@ -27,6 +28,11 @@
       font-size: 1.4em;
       font-weight: 900;
       margin-bottom: 20px;
+
+      &:hover {
+        color: rgba($our-redish, .45) ;
+      }
+
     }
   }
 
@@ -59,5 +65,23 @@
       border-color: $our-redish;
       box-shadow: 0 0 0 1px rgba($our-redish, .5);
     }
+  }
+}
+
+@keyframes bg-animation {
+  0% {
+    background: rgba($white, .15) ;
+  }
+
+  25% {
+    background: rgba($white, .25) ;
+  }
+
+  75% {
+    background: rgba($white, .65) ;
+  }
+
+  100% {
+    background: rgba($white, .95) ;
   }
 }
