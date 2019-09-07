@@ -1,4 +1,8 @@
-<div class="app-product">
+<div class="app-product" (mouseenter)="showInfo(event)">
+    <div [ngClass]="isHovered?'app-cover-info':'hide-cover-info'" (mouseleave)="showInfo(even)">
+      <i class="fa fa-heart-o"></i>
+      <app-cbutton value="Quick view"> </app-cbutton>
+    </div>
     <!-- <img class="thumbnail" src="https://backendapi.turing.com/images/products/wreath.gif"/> -->
     <img class="thumbnail" [src]='thumbnail'/>
     <h3 class="product-name">{{name}}</h3>
