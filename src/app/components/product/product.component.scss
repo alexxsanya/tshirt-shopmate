@@ -1,0 +1,38 @@
+@import '../../../variables';
+
+.app-product {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-content: center;
+  margin: 45px auto;
+//   width: 80%;
+
+  .thumbnail {
+    max-height: 200px;
+    max-width: 100%;
+  }
+
+  h3 {
+    &.product-name {
+      font-size: 1.4em;
+      font-weight: 700;
+      padding: 15px 0;
+    }
+  }
+
+  button {
+    background: $our-redish;
+    border-color: $our-redish;
+    border-radius: 20px;
+    padding: 8px 25px;
+
+    &:focus,
+    &.focus {
+      background: $our-redish;
+      border-color: $our-redish;
+      box-shadow: 0 0 0 1px rgba($our-redish, .5);
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@import '../../../variables';
+
+.cbutton {
+  background: $our-redish;
+  border-color: $our-redish;
+  border-radius: 20px;
+  font-weight: 500;
+  padding: 8px 25px;
+
+  &:hover {
+    background: rgba($our-redish, .5);
+  }
+
+  &:focus,
+  &:hover {
+    border-color: $our-redish;
+    box-shadow: 0 0 0 1px rgba($our-redish, .5);
+  }
+}
