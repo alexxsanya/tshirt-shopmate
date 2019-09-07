@@ -6,10 +6,12 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./product.component.scss']
 })
 export class ProductComponent implements OnInit {
-  @Input() name;
-  @Input() thumbnail;
-  @Input() price;
+  @Input() name: string;
+  @Input() thumbnail: string;
+  @Input() price: number;
+  @Input() old_price: number;
   isHovered: boolean = false;
+
   constructor() { }
 
   ngOnInit() {
