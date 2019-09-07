@@ -49,7 +49,14 @@
     &.product-name {
       font-size: 1.4em;
       font-weight: 700;
-      padding: 15px 0;
+      padding: 5px 0;
+    }
+
+    &.product-price {
+      color: $our-gray-l;
+      font-size: 1.2em;
+      font-weight: 300;
+      padding-bottom: 5px;
     }
   }
 

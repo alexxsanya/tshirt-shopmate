@@ -1,11 +1,12 @@
 <div class="app-product" (mouseenter)="showInfo(event)">
     <div [ngClass]="isHovered?'app-cover-info':'hide-cover-info'" (mouseleave)="showInfo(even)">
-      <i class="fa fa-heart-o"></i>
+      <i class="fa fa-heart-o" (click)='favorite(event)'></i>
       <app-cbutton value="Quick view"> </app-cbutton>
     </div>
     <!-- <img class="thumbnail" src="https://backendapi.turing.com/images/products/wreath.gif"/> -->
     <img class="thumbnail" [src]='thumbnail'/>
     <h3 class="product-name">{{name}}</h3>
+    <h3 class="product-price">{{ price | currency:'&#8358;' : 'symbol' : '1.2' }}</h3>
     <app-cbutton value="Buy now"> </app-cbutton>
 
 </div>

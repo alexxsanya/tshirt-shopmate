@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ProductComponent implements OnInit {
   @Input() name;
   @Input() thumbnail;
+  @Input() price;
   isHovered: boolean = false;
   constructor() { }
 
@@ -16,5 +17,9 @@ export class ProductComponent implements OnInit {
 
   showInfo(event: Event){
     this.isHovered = this.isHovered?false:true;
+  }
+
+  favorite(event: Event){
+    console.log(event)
   }
 }
