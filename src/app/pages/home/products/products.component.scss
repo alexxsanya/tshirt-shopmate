@@ -5,13 +5,13 @@
   flex-direction: row;
   margin: 0 auto;
   min-height: 200px;
-  width: 93%;
+  width: 88.7%;
 
   .filter-box {
     background: $white;
     box-shadow: 0 0 10px $box-shadow;
     height: 720px;
-    margin-right: 22px;
+    margin-right: 30px;
     width: 22.5%;
   }
 
@@ -22,11 +22,15 @@
     width: 76%;
 
     div {
+      align-items: center;
       background: $white;
       box-shadow: 0 0 10px $box-shadow;
-      height: 350px;
-      margin: 0 20px 20px 0;
-      width: 31.8%;
+      display: flex;
+      height: 400px;
+      justify-content: center;
+      margin: 0 30px 30px 0;
+      width: 31%;
+
 
       &:nth-child(3),
       &:nth-child(6) {
