@@ -5,6 +5,7 @@
   border-color: $our-redish;
   border-radius: 20px;
   font-weight: 500;
+  min-width: 100px;
   padding: 8px 25px;
 
   &:hover {
@@ -15,5 +16,17 @@
   &:hover {
     border-color: $our-redish;
     box-shadow: 0 0 0 1px rgba($our-redish, .5);
+  }
+
+  &.md {
+    border-radius: 25px;
+    font-size: 1.4em;
+    padding: 12px 45px;
+  }
+
+  &.lg {
+    border-radius: 40px;
+    font-size: 1.8em;
+    padding: 15px 65px;
   }
 }
