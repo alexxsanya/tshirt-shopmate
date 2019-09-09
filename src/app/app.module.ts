@@ -10,6 +10,7 @@ import { BannerComponent } from './components/banner/banner.component';
 import { ProductsComponent } from './pages/home/products/products.component';
 import { ProductComponent } from './components/product/product.component';
 import { CbuttonComponent } from './components/cbutton/cbutton.component';
+import { FilterComponent } from './components/filter/filter.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CbuttonComponent } from './components/cbutton/cbutton.component';
     BannerComponent,
     ProductsComponent,
     ProductComponent,
-    CbuttonComponent
+    CbuttonComponent,
+    FilterComponent
   ],
   imports: [
     BrowserModule,
