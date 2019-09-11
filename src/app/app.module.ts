@@ -25,7 +25,7 @@ import { FilterComponent } from './components/filter/filter.component';
     FilterComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     HttpClientModule,
     Ng5SliderModule
