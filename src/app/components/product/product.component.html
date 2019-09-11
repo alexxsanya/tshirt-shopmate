@@ -7,7 +7,7 @@
     <img class="thumbnail" [src]='thumbnail' (mouseenter)="showInfo(event)"/>
     <h3 class="product-name">{{name}}</h3>
     <h3 class="product-price">
-      {{ price | currency:'&#8358;' : 'symbol' : '1.2' }}
+      {{ 10000000 | currency:'&#8358;' : 'symbol' : '1.2' }}
       <span class="old-price"> {{ old_price | currency:'&#8358;' : 'symbol' : '1.2' }} </span>
     </h3>
     <app-cbutton value="Buy now"> </app-cbutton>

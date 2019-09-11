@@ -29,9 +29,8 @@
         <div class="filter">
             <h3>Price range</h3>
             <div class="filter-main">
-                <div class="form-group">
-                    <input type="range" minlength="100" maxlength="100" value="5">
-                    <label>lab</label>
+                <div class="custom-slider">
+                    <ng5-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options"></ng5-slider>
                 </div>
             </div>
         </div>

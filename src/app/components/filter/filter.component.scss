@@ -121,6 +121,32 @@
           border: 1px solid rgba($color: #7f7f7f, $alpha: .5);
         }
       }
+
+      .custom-slider {
+        width: 100%;
+
+        .ng5-slider {
+          .ng5-slider-pointer {
+            background-color: $our-redish !important;
+            border-radius: 16px !important;
+            display: none !important;
+            height: 20px !important;
+            top: -8px !important;
+            width: 20px !important;
+
+            &::after {
+              background: $white;
+              border-radius: 4px;
+              content: '';
+              height: 4px;
+              left: 8px;
+              position: absolute;
+              top: 8px;
+              width: 4px;
+            }
+          }
+        }
+      }
     }
   }
 
