@@ -15,3 +15,10 @@ https://github.com/zandoan/turing-frontend
 ## Image Resources
 - https://backendapi.turing.com/images/products/
 - Example: https://backendapi.turing.com/images/products/wreath.gif
+
+## Deployment
+- checkout my deployment here - https://turing-store.herokuapp.com
+
+## Note
+- The backend doesn't not have the exact data as in seen in the UI designs
+- I have made a few changes in the UI, where I felt necessary.
