@@ -17,11 +17,11 @@ export class ProductComponent implements OnInit {
   ngOnInit() {
   }
 
-  showInfo(event: Event){
+  showInfo(){
     this.isHovered = this.isHovered?false:true;
   }
 
-  favorite(event: Event){
-    console.log(event)
+  favorite(){
+    console.log("favorited");
   }
 }
