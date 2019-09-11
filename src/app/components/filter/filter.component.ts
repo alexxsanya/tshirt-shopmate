@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { Options } from 'ng5-slider';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-filter',
@@ -13,8 +14,11 @@ export class FilterComponent implements OnInit {
     floor: 0,
     ceil: 250
   };
-  
-  constructor() { }
+  isBrowser: boolean;
+
+  constructor(@Inject(PLATFORM_ID) private platformId) {
+    this.isBrowser = isPlatformBrowser(this.platformId);
+   }
 
   ngOnInit() {
   }

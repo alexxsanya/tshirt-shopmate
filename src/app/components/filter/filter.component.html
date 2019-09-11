@@ -29,7 +29,7 @@
         <div class="filter">
             <h3>Price range</h3>
             <div class="filter-main">
-                <div class="custom-slider">
+                <div class="custom-slider" *ngIf='isBrowser'>
                     <ng5-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options"></ng5-slider>
                 </div>
             </div>
