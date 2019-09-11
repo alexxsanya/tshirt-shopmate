@@ -125,27 +125,36 @@
       .custom-slider {
         width: 100%;
 
-        .ng5-slider {
-          .ng5-slider-pointer {
-            background-color: $our-redish !important;
-            border-radius: 16px !important;
-            display: none !important;
-            height: 20px !important;
-            top: -8px !important;
-            width: 20px !important;
+        ::ng-deep {
+          .ng5-slider {
+            margin: 15px 0 15px;
 
-            &::after {
-              background: $white;
-              border-radius: 4px;
-              content: '';
-              height: 4px;
-              left: 8px;
-              position: absolute;
-              top: 8px;
-              width: 4px;
+            .ng5-slider-pointer {
+              background-color: $white;
+              border-radius: 16px;
+              height: 14px;
+              top: -5px;
+              width: 14px;
+
+              &::after {
+                background-color: $our-redish;
+                border-radius: 4px;
+                height: 8px;
+                left: 3px;
+                top: 3px;
+                width: 8px;
+              }
             }
-          }
+
+            .ng5-slider-selection {
+              background: $our-redish;
+            }
+
+            .ng5-slider-bubble {
+              bottom: -36px;
+            }
         }
+      }
       }
     }
   }

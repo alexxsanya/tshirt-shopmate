@@ -12,7 +12,8 @@ export class FilterComponent implements OnInit {
   maxValue: number = 200;
   options: Options = {
     floor: 0,
-    ceil: 250
+    ceil: 250,
+    step: 10,
   };
   isBrowser: boolean;
 
