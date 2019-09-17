@@ -12,6 +12,22 @@ import { ProductsComponent } from './pages/home/products/products.component';
 import { ProductComponent } from './components/product/product.component';
 import { CbuttonComponent } from './components/cbutton/cbutton.component';
 import { FilterComponent } from './components/filter/filter.component';
+import { NgxUiLoaderModule, NgxUiLoaderRouterModule,
+  NgxUiLoaderConfig, SPINNER, POSITION, PB_DIRECTION 
+} from  'ngx-ui-loader';
+
+const ngxUiLoaderConfig: NgxUiLoaderConfig = {
+  bgsColor: '#f62f5e',
+  fgsColor:'#f62f5e',
+  bgsPosition: POSITION.bottomCenter,
+  bgsSize: 40,
+  bgsType: SPINNER.threeStrings,
+  fgsType: SPINNER.threeStrings,
+  pbDirection: PB_DIRECTION.leftToRight,
+  pbThickness: 3,
+  pbColor: "#f62f5e",
+  overlayColor: "rgba(0,0,0,0.7)",
+};
 
 @NgModule({
   declarations: [
@@ -28,7 +44,11 @@ import { FilterComponent } from './components/filter/filter.component';
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     HttpClientModule,
-    Ng5SliderModule
+    Ng5SliderModule,    
+    NgxUiLoaderModule.forRoot(ngxUiLoaderConfig), // import NgxUiLoaderModule
+    NgxUiLoaderRouterModule, // import NgxUiLoaderRouterModule. By default, it will show foreground loader.
+    // If you need to show background spinner, do as follow:
+    // NgxUiLoaderRouterModule.forRoot({ showForeground: false })
   ],
   providers: [],
   bootstrap: [AppComponent]
