@@ -19,7 +19,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    min-height: 60vh;
+    min-height: 427px;
     padding: 80px 100px;
     width: 100%;
 
@@ -27,30 +27,30 @@
       color: $our-redish;
       display: flex;
       font-size: 3.4em;
-      font-weight: 400;
+      font-weight: 900;
       margin-bottom: 5px;
       width: 100%;
     }
 
     .banner-items {
-      background: rgba($white, .4);
+      background: rgba($black, .4);
+      border-radius: 2px;
       display: flex;
       flex-wrap: wrap;
-      height: 30px;
-      justify-content: space-between;
+      height: 24px;
+      justify-content: space-evenly;
       max-width: 60%;
       min-width: 20%;
 
       div a {
-        color: $black;
+        color: $white;
         flex: 1 1 33.3%;
-        font-size: 1.3em;
+        font-size: 1em;
         font-weight: 300;
-        // height: 30px;
         min-width: 150px;
 
         &:hover {
-          color: rgba($black, .7);
+          color: rgba($black, .8);
           text-decoration: none;
         }
       }
@@ -60,7 +60,7 @@
     h3 {
       color: $black;
       display: flex;
-      font-weight: 200;
+      font-weight: 300;
       margin-bottom: 50px;
       text-shadow: 2px 2px 4px $white;
       width: 90%;
