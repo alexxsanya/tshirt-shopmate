@@ -1,7 +1,11 @@
 @import '../../../variables';
 
 .banner-container {
-  background: linear-gradient(90deg, #aca9a3 62%, #626765 95%);
+  /* background: linear-gradient(90deg,#aca9a3 62%,#626765 95%); */
+  background: no-repeat url(https://ak8.picdn.net/shutterstock/videos/12199718/thumb/1.jpg);
+  background-attachment: fixed;
+  background-position: right;
+  background-size: cover;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -29,21 +33,24 @@
     }
 
     .banner-items {
+      background: rgba($white, .4);
       display: flex;
       flex-wrap: wrap;
+      height: 30px;
       justify-content: space-between;
       max-width: 60%;
       min-width: 20%;
 
       div a {
-        color: $white;
+        color: $black;
         flex: 1 1 33.3%;
         font-size: 1.3em;
-        height: 30px;
+        font-weight: 300;
+        // height: 30px;
         min-width: 150px;
 
         &:hover {
-          color: #cecece;
+          color: rgba($black, .7);
           text-decoration: none;
         }
       }
@@ -51,11 +58,11 @@
     }
 
     h3 {
-      color: $white;
+      color: $black;
       display: flex;
       font-weight: 200;
       margin-bottom: 50px;
-      text-shadow: 2px 2px 4px $black;
+      text-shadow: 2px 2px 4px $white;
       width: 90%;
     }
   }
