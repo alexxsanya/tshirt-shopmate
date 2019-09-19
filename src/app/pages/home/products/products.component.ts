@@ -19,17 +19,16 @@ export class ProductsComponent implements OnInit {
 
     // console.log(this.productStore)
 
-    this.ngxService.startBackground('loader-products');
-    // Do something here...
-    this.productStore = await this.getProducts();
-    this.ngxService.stopBackground('loader-products');
-
-    // this.ngxService.startLoader('loader-products'); 
+    // this.ngxService.startBackground('loader-products');
+    // // Do something here...
     // this.productStore = await this.getProducts();
+    // this.ngxService.stopBackground('loader-products');
 
-    // setTimeout(() => {
-    //   this.ngxService.stopLoader('loader-products'); 
-    // }, 2000);
+    this.ngxService.startLoader('loader-products'); 
+    this.productStore = await this.getProducts();
+    setTimeout(() => {
+      this.ngxService.stopLoader('loader-products'); 
+    }, 2000);
   }
   getProducts(){
     let products: any = []

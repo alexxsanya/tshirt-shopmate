@@ -1,5 +1,14 @@
 <div class="app-products">
-  <ngx-ui-loader [loaderId]="'loader-products'"></ngx-ui-loader>
+  <ngx-ui-loader 
+    [loaderId]="'loader-products'"
+    [text]="'Loading Items...'"
+    [textColor]="'#f62f5e'"
+    [textPosition]="'center-top'"
+    [hasProgressBar]="false"
+    [overlayColor]="'transparent'"
+    [fgsType]="'SPINNER.wanderingCubes'"
+  
+  ></ngx-ui-loader>
   <div class="filter-box">
     <app-filter></app-filter>
   </div>
