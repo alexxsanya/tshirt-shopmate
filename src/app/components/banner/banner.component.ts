@@ -19,7 +19,7 @@ export class BannerComponent implements OnInit {
   departments: any;
   ;
   constructor(private activatedRoute: ActivatedRoute, private departmentService: DepartmentsService) { 
-    this.banner_title = 'Mens Wear'
+    this.banner_title = 'Regional Wear'
     this.banner_categories = new Array ();
 
     this.banner_image = {
