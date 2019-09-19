@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
+import { ProductsService } from 'src/app/services/products/products.service';
+import { Product } from 'src/app/models/product';
 
 @Component({
   selector: 'app-products',
@@ -7,10 +9,15 @@ import { NgxUiLoaderService } from 'ngx-ui-loader';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
+  productStore:any = {};
+  constructor(
+    private ngxService: NgxUiLoaderService,
+    private productsService: ProductsService) { }
 
-  constructor(private ngxService: NgxUiLoaderService) { }
+  async ngOnInit() {
+    this.productStore = await this.getProducts();
 
-  ngOnInit() {
+    console.log(this.productStore)
     // this.ngxService.start(); // start foreground spinner of the master loader with 'default' taskId
     // // Stop the foreground loading after 5s
     // setTimeout(() => {
@@ -27,5 +34,13 @@ export class ProductsComponent implements OnInit {
     //   this.ngxService.stopLoader('loader-product'); 
     // }, 5000);
   }
+  getProducts(){
+    let products: any = []
 
+    products = this.productsService.getProducts(6).then(productsData => {
+      return productsData;
+    });
+
+    return products;
+  }
 }

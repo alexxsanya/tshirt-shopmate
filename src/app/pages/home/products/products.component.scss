@@ -10,7 +10,7 @@
   .filter-box {
     background: $white;
     box-shadow: 0 0 10px $box-shadow;
-    height: 830px;
+    height: 750px;
     margin-right: 30px;
     width: 22.5%;
   }
@@ -27,14 +27,15 @@
       background: $white;
       box-shadow: 0 0 10px $box-shadow;
       display: flex;
-      height: 400px;
+      height: 360px;
       justify-content: center;
       margin: 0 30px 30px 0;
       width: 31%;
 
 
       &:nth-child(3),
-      &:nth-child(6) {
+      &:nth-child(6),
+      &:nth-child(9) {
         margin-right: 0;
       }
 
