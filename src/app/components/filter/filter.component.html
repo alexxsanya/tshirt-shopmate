@@ -9,11 +9,12 @@
         <div class="filter">
             <h3>Color</h3>
             <div class="filter-main">
-                <div class="color-button"><div class="inner"></div></div>
-                <div class="color-button active"><div class="inner red"></div></div>
-                <div class="color-button"><div class="inner green"></div></div>
-                <div class="color-button"><div class="inner blue"></div></div>
-                <div class="color-button"><div class="inner yellow"></div></div>
+                <div *ngFor = "let color of colors">
+                    <div class="color-button {{color.status}}" id="btn-{{color.name}}" 
+                        (click)="selectColor(color)">
+                        <div class="inner {{color.name}}"></div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="filter">
