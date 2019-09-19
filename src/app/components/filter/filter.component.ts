@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject, PLATFORM_ID, asNativeElements } from '@angular/core';
 import { Options } from 'ng5-slider';
-import { isPlatformBrowser } from '@angular/common';
-import { $ } from 'protractor';
+import { isPlatformBrowser } from '@angular/common'; 
+import { Color, Size } from 'src/app/models';
 
 @Component({
   selector: 'app-filter',
@@ -17,9 +17,19 @@ export class FilterComponent implements OnInit {
     step: 10,
   };
   isBrowser: boolean;
-  colors = [];
-  sizes = [];
-
+  colors:Array<Color>;
+  sizes:Array<Size> = [{
+    name: 'default',
+    status: 'false'
+  }];
+  filterCriteria:Object = {
+    size:[],
+    colors:[],
+    price:{
+      maxValue:this.maxValue,
+      minValue: this.minValue
+    }
+  }
   constructor(@Inject(PLATFORM_ID) private platformId) {
     this.isBrowser = isPlatformBrowser(this.platformId);
     this.colors = [
@@ -75,7 +85,7 @@ export class FilterComponent implements OnInit {
   ngOnInit() {
   }
 
-  selectProp(prop){
+  selectProp = (prop) => {
     const clr = document.getElementById(`btn-${prop.name}`);
 
     prop.status = prop.status=='active' ? 'false' : 'active';
@@ -84,4 +94,14 @@ export class FilterComponent implements OnInit {
     
   }
 
+  applyFilter = () => {
+    console.log(this.filterCriteria)
+  }
+
+  getSelected = (items, type) => {
+    Object.keys(items).reduce((acc, key) => {
+      if (items[key].status == 'active') this.filterCriteria[type].push(items[key].name);
+      return acc;
+    });
+  }
 }
