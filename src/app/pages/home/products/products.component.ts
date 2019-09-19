@@ -15,24 +15,21 @@ export class ProductsComponent implements OnInit {
     private productsService: ProductsService) { }
 
   async ngOnInit() {
+    // this.productStore = await this.getProducts();
+
+    // console.log(this.productStore)
+
+    this.ngxService.startBackground('loader-products');
+    // Do something here...
     this.productStore = await this.getProducts();
+    this.ngxService.stopBackground('loader-products');
 
-    console.log(this.productStore)
-    // this.ngxService.start(); // start foreground spinner of the master loader with 'default' taskId
-    // // Stop the foreground loading after 5s
+    // this.ngxService.startLoader('loader-products'); 
+    // this.productStore = await this.getProducts();
+
     // setTimeout(() => {
-    //   this.ngxService.stop(); // stop foreground spinner of the master loader with 'default' taskId
-    // }, 5000);
-
-    // // OR
-    // this.ngxService.startBackground('do-background-things');
-    // // Do something here...
-    // this.ngxService.stopBackground('do-background-things');
-
-    // this.ngxService.startLoader('loader-product'); 
-    // setTimeout(() => {
-    //   this.ngxService.stopLoader('loader-product'); 
-    // }, 5000);
+    //   this.ngxService.stopLoader('loader-products'); 
+    // }, 2000);
   }
   getProducts(){
     let products: any = []

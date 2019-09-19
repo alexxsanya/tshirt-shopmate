@@ -1,23 +1,9 @@
 <div class="app-products">
-  <ngx-ui-loader ></ngx-ui-loader>
+  <ngx-ui-loader [loaderId]="'loader-products'"></ngx-ui-loader>
   <div class="filter-box">
     <app-filter></app-filter>
   </div>
   <div class="grid-layout">
-    <!-- <div>
-        <app-product 
-            name="Men's Knitwear Offer"
-            thumbnail="assets/shirt.png"
-            price="4.00"
-            old_price="5.69"
-        >
-        </app-product>
-    </div>
-    <div></div>
-    <div></div>
-    <div></div>    
-    <div></div>
-    <div></div> -->
     <div *ngFor="let product of productStore.rows">
         <app-product id={{product.product_id}}
             name={{product.name}}
