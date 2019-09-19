@@ -11,7 +11,7 @@
             <div class="filter-main">
                 <div *ngFor = "let color of colors">
                     <div class="color-button {{color.status}}" id="btn-{{color.name}}" 
-                        (click)="selectColor(color)">
+                        (click)="selectProp(color)">
                         <div class="inner {{color.name}}"></div>
                     </div>
                 </div>
@@ -20,11 +20,10 @@
         <div class="filter">
             <h3>Size</h3>
             <div class="filter-main">
-                <div class="size-button">XS</div>
-                <div class="size-button active">S</div>
-                <div class="size-button">M</div>
-                <div class="size-button">L</div>
-                <div class="size-button">XL</div>
+                <div *ngFor = "let size of sizes">
+                    <div class="size-button {{size.status}}" 
+                    (click)='selectProp(size)' id="btn-{{size.name}}" >{{size.name}}</div> 
+                </div>
             </div>
         </div>
         <div class="filter">
