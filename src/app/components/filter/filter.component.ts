@@ -18,6 +18,7 @@ export class FilterComponent implements OnInit {
   };
   isBrowser: boolean;
   colors = [];
+  sizes = [];
 
   constructor(@Inject(PLATFORM_ID) private platformId) {
     this.isBrowser = isPlatformBrowser(this.platformId);
@@ -43,17 +44,43 @@ export class FilterComponent implements OnInit {
         status: 'false'
       },
     ]
+    this.sizes = [
+      {
+        name: 'XS',
+        status: 'false'
+      },
+      {
+        name: 'S',
+        status: 'active'
+      },
+      {
+        name: 'M',
+        status: 'false'
+      },
+      {
+        name: 'L',
+        status: 'false'
+      },
+      {
+        name: 'XL',
+        status: 'false'
+      },
+      {
+        name: 'XXL',
+        status: 'false'
+      }
+    ]
    }
 
   ngOnInit() {
   }
 
-  selectColor(color){
-    const clr = document.getElementById(`btn-${color.name}`);
-    
-    color.status = color.status=='active' ? 'false' : 'active';
+  selectProp(prop){
+    const clr = document.getElementById(`btn-${prop.name}`);
 
-    if (color.status=='false') clr.classList.remove('active')
+    prop.status = prop.status=='active' ? 'false' : 'active';
+
+    if (prop.status=='false') clr.classList.remove('active')
     
   }
 
