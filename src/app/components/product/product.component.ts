@@ -10,6 +10,7 @@ export class ProductComponent implements OnInit {
   @Input() thumbnail: string;
   @Input() price: number;
   @Input() old_price: number;
+  @Input() id: number;
   isHovered: boolean = false;
 
   constructor() { }
