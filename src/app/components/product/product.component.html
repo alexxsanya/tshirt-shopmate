@@ -1,7 +1,7 @@
 <div class="app-product">
     <div [ngClass]="isHovered?'app-cover-info':'hide-cover-info'" (mouseleave)="showInfo()">
       <i class="fa fa-heart-o" (click)='favorite()'></i>
-      <app-cbutton value="Quick view"> </app-cbutton>
+      <app-cbutton link="/product/{{id}}" value="Quick view"> </app-cbutton>
     </div>
     <img class="thumbnail" [src]='thumbnail' (mouseenter)="showInfo()"/>
     <h3 class="product-name">{{name}}</h3>
