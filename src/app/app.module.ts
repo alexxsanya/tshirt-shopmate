@@ -16,6 +16,7 @@ import { NgxUiLoaderModule, NgxUiLoaderRouterModule,
   NgxUiLoaderConfig, SPINNER, POSITION, PB_DIRECTION 
 } from  'ngx-ui-loader';
 import { FooterComponent } from './components/footer/footer.component';
+import { SingleItemComponent } from './pages/single-item/single-item.component';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   bgsColor: '#f62f5e',
@@ -40,7 +41,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     ProductComponent,
     CbuttonComponent,
     FilterComponent,
-    FooterComponent
+    FooterComponent,
+    SingleItemComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
