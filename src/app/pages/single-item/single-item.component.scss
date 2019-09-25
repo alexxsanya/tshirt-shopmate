@@ -1,0 +1,82 @@
+@import '../../../variables';
+
+.app-single-item {
+  background-color: $white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 20px auto;
+  min-height: 600px;
+  position: relative;
+  width: 88.7%;
+
+  .product-show-case {
+    align-items: center;
+    border-right: 1px solid $bg-light;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 45%;
+
+    .product-display {
+      display: flex;
+      height: 350px;
+      justify-content: center;
+      width: 80%;
+    }
+
+    .product-thumbnails {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      height: 100px;
+      justify-content: center;
+      margin-top: 10px;
+      overflow-x: auto;
+      width: 80%;
+
+      img {
+        height: 80px;
+        margin: 0 5px;
+        width: 80px;
+
+        &:hover {
+          border: 1px solid $our-redish;
+          cursor: pointer;
+        }
+
+        &.active {
+          border: 1px solid $our-redish;
+        }
+      }
+    }
+  }
+
+  .product-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding-top: 30px;
+    width: 50%;
+
+    .product-rating {
+      margin: 40px 0;
+    }
+
+    h3 {
+      color: $our-gray;
+      font-size: 1.4em;
+    }
+
+    .product-price {
+      color: $our-redish;
+      font-size: 1.7em;
+      font-weight: 700;
+      margin: 40px 0;
+    }
+
+    .product-action {
+      margin-top: 110px;
+    }
+  }
+}

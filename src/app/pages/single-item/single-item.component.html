@@ -1,1 +1,32 @@
-<p>single-item works!</p>
+<main class="app-single-item">
+    <article class="product-show-case">
+      <div class="product-display">
+        <img src="../../../assets/shirt.png" />
+      </div>
+      <div class="product-thumbnails">
+        <img class="active" src="../../../assets/shirt.png" />
+        <img src="../../../assets/shirt.png" />
+        <img src="../../../assets/shirt.png" />
+      </div>
+    </article>
+    <article class="product-details">
+        <header>
+            <p class="product-rating">Ratings</p>
+            <h2>Chartres Cathedral</h2>
+            <p>"The Fur Merchants". Not all the beautiful stained glass in the great cathedrals depicts saints and angels! 
+                Lay aside your furs for the summer and wear this beautiful T-shirt!</p>
+            <h3 class="product-price">
+                {{ 16.6 | currency:'&#163;' : 'symbol' : '1.2' }}
+                <span class="old-price" *ngIf="old_price>0"> {{ 18.9 | currency:'&#163;' : 'symbol' : '1.2' }} </span>
+            </h3>
+        </header>
+        <div>
+            <div class="product-qty">
+                <h3>Quantity</h3>
+            </div>
+            <div class="product-action">
+                <app-cbutton value="Add to Cart" class="md"> </app-cbutton>
+            </div>
+        </div>
+    </article>
+</main>
