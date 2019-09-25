@@ -1,1 +1,4 @@
-<button type="button" class="btn btn-primary cbutton">{{value}}</button>
+<button type="button" 
+    *ngIf='isBrowser'
+    class="btn btn-primary cbutton" 
+    (click)="goto()">{{value}}</button>

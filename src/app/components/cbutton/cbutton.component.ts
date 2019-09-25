@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-cbutton',
@@ -7,9 +8,17 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CbuttonComponent implements OnInit {
   @Input() value;
-  constructor() { }
+  @Input() link;
+  isBrowser: boolean;
+
+  constructor(@Inject(PLATFORM_ID) private platformId) {
+    this.isBrowser = isPlatformBrowser(this.platformId);
+   }
 
   ngOnInit() {
   }
 
+  goto(){
+    window.location.href = this.link
+  }
 }
