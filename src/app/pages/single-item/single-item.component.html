@@ -26,6 +26,19 @@
         <div>
             <div class="product-qty">
                 <h3>Quantity</h3>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <button class="btn btn-outline-secondary qty-btn" type="button" id="decr-qty">
+                            <i class="fa fa-plus"></i>
+                        </button>
+                    </div>
+                    <input type="text" class="form-control qty-input" maxlength="3" value="1">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary qty-btn" type="button" id="incr-qty">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
             <div class="product-action">
                 <app-cbutton value="Add to Cart" class="md"> </app-cbutton>
