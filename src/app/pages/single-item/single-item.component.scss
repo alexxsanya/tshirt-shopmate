@@ -55,12 +55,11 @@
   .product-details {
     display: flex;
     flex-direction: column;
-    justify-content: start;
-    padding-top: 30px;
+    padding-top: 50px;
     width: 50%;
 
     .product-rating {
-      margin: 40px 0;
+      margin: 30px 0;
     }
 
     h3 {

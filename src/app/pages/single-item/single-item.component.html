@@ -11,7 +11,10 @@
     </article>
     <article class="product-details">
         <header>
-            <p class="product-rating">Ratings</p>
+            <div class="product-rating">
+                <bar-rating
+                    [(rate)]="rating" [max]="5" [readOnly]="true"></bar-rating>
+            </div>
             <h2>Chartres Cathedral</h2>
             <p>"The Fur Merchants". Not all the beautiful stained glass in the great cathedrals depicts saints and angels! 
                 Lay aside your furs for the summer and wear this beautiful T-shirt!</p>

@@ -17,6 +17,7 @@ import { NgxUiLoaderModule, NgxUiLoaderRouterModule,
 } from  'ngx-ui-loader';
 import { FooterComponent } from './components/footer/footer.component';
 import { SingleItemComponent } from './pages/single-item/single-item.component';
+import { BarRatingModule } from "ngx-bar-rating";
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   bgsColor: '#f62f5e',
@@ -53,6 +54,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     NgxUiLoaderRouterModule, // import NgxUiLoaderRouterModule. By default, it will show foreground loader.
     // If you need to show background spinner, do as follow:
     // NgxUiLoaderRouterModule.forRoot({ showForeground: false })
+    BarRatingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

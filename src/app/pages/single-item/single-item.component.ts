@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./single-item.component.scss']
 })
 export class SingleItemComponent implements OnInit {
-
+  rating: number = 2;
   constructor() { }
 
   ngOnInit() {
