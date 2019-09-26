@@ -74,8 +74,49 @@
       margin: 40px 0;
     }
 
+    .product-qty {
+      .input-group {
+        margin-top: 20px;
+        width: 150px;
+      }
+
+      .qty-input {
+        border-radius: 15px;
+        margin: 0 10px;
+        text-align: center;
+
+        &:focus,
+        &:active {
+          border-color: $our-redish;
+          box-shadow: none;
+        }
+
+      }
+
+      .qty-btn {
+        background-color: $bg-light;
+        border: 0;
+        border-radius: 49%;
+        color: $black;
+        font-weight: 400;
+        height: 37px;
+        text-align: center;
+        width: 36px;
+
+        &:focus,
+        &:active {
+          box-shadow: none;
+        }
+
+        &:hover {
+          background-color: $our-gray;
+          color: $white;
+        }
+      }
+    }
+
     .product-action {
-      margin-top: 110px;
+      margin-top: 50px;
     }
   }
 }
