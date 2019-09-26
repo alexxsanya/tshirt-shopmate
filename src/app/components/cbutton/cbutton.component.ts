@@ -19,6 +19,6 @@ export class CbuttonComponent implements OnInit {
   }
 
   goto(){
-    window.location.href = this.link
+    if(this.link !== undefined) window.location.href = this.link
   }
 }
