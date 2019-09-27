@@ -15,4 +15,9 @@ export class ProductsService {
     .toPromise();
   }
 
+  async getAProduct(product_id): Promise<Product> {
+    return await this.http.get<any>(`${environment.api_url}/products/${product_id}`)
+    .toPromise();    
+  }
+
 }
