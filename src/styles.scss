@@ -7,3 +7,16 @@ body {
   max-width: 1500px;
   min-width: 1024px;
 }
+
+.br-unit {
+  font-size: 25px !important;
+  height: 18px;
+  margin-right: 9px;
+  width: 18px;
+
+  &.br-selected {
+    &::after {
+      color: $our-redish;
+    }
+  }
+}
