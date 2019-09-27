@@ -8,11 +8,13 @@
       ></ngx-ui-loader>
     <article class="product-show-case">
       <div class="product-display">
-        <img src="https://backendapi.turing.com/images/products/{{productDetails.image}}" />
+        <img src="https://backendapi.turing.com/images/products/{{productDetails.image}}" id="main-img"/>
       </div>
       <div class="product-thumbnails">
-        <img src="https://backendapi.turing.com/images/products/{{productDetails.image}}" />
-        <img src="https://backendapi.turing.com/images/products/{{productDetails.image_2}}" />
+        <img (click)="switchImages($event)" 
+            src="https://backendapi.turing.com/images/products/{{productDetails.image}}" />
+        <img (click)="switchImages($event)" 
+            src="https://backendapi.turing.com/images/products/{{productDetails.image_2}}" />
       </div>
     </article>
     <article class="product-details">

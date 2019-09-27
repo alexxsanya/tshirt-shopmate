@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { ProductsService } from 'src/app/services/products/products.service';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-single-item',
@@ -14,16 +15,20 @@ export class SingleItemComponent implements OnInit {
   quantity: number = 1;
   product_id: string;
   productDetails: any = {};
+  isBrowser: any;
 
   constructor(
     private route: ActivatedRoute, 
     private productsService: ProductsService,
     private ngxService: NgxUiLoaderService,
-    ) { }
+    @Inject(PLATFORM_ID) private platformId,
+    ) { 
+      this.isBrowser = isPlatformBrowser(this.platformId);
+    }
 
   async ngOnInit() {
     this.product_id = this.route.snapshot.paramMap.get('product_id');
-
+    this.product_id = atob(this.product_id)
     this.ngxService.startLoader('loader-product'); 
 
     this.productDetails = await this.getAProduct(this.product_id);
@@ -55,6 +60,11 @@ export class SingleItemComponent implements OnInit {
     });
 
     return products;
+  }
+
+  switchImages = (element) => {
+    const clr = document.getElementById(`main-img`);
+    clr.setAttribute('src', element.target.src );
   }
 
 }
