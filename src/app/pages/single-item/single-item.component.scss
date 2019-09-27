@@ -23,6 +23,11 @@
       height: 350px;
       justify-content: center;
       width: 80%;
+
+      img {
+        height: 300px;
+        width: 300px;
+      }
     }
 
     .product-thumbnails {
@@ -72,6 +77,12 @@
       font-size: 1.7em;
       font-weight: 700;
       margin: 40px 0;
+
+      .old-price {
+        color: $our-gray;
+        font-size: .6em;
+        text-decoration: line-through;
+      }
     }
 
     .product-qty {
@@ -81,6 +92,7 @@
       }
 
       .qty-input {
+        background: transparent;
         border-radius: 15px;
         margin: 0 10px;
         text-align: center;

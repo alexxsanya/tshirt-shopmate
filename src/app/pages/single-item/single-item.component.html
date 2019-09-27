@@ -1,26 +1,31 @@
 <main class="app-single-item">
+    <ngx-ui-loader 
+        [loaderId]="'loader-product'"
+        [text]="'Loading...'"
+        [textColor]="'#f62f5e'"
+        [hasProgressBar]="true"
+        [overlayColor]="'transparent'"
+      ></ngx-ui-loader>
     <article class="product-show-case">
       <div class="product-display">
-        <img src="../../../assets/shirt.png" />
+        <img src="https://backendapi.turing.com/images/products/{{productDetails.image}}" />
       </div>
       <div class="product-thumbnails">
-        <img class="active" src="../../../assets/shirt.png" />
-        <img src="../../../assets/shirt.png" />
-        <img src="../../../assets/shirt.png" />
+        <img src="https://backendapi.turing.com/images/products/{{productDetails.image}}" />
+        <img src="https://backendapi.turing.com/images/products/{{productDetails.image_2}}" />
       </div>
     </article>
     <article class="product-details">
         <header>
             <div class="product-rating">
                 <bar-rating
-                    [(rate)]="rating" [max]="5" [readOnly]="true"></bar-rating>
+                    [(rate)]="this.productDetails.rating" [max]="5" [readOnly]="true"></bar-rating>
             </div>
-            <h2>Chartres Cathedral</h2>
-            <p>"The Fur Merchants". Not all the beautiful stained glass in the great cathedrals depicts saints and angels! 
-                Lay aside your furs for the summer and wear this beautiful T-shirt!</p>
+            <h2>{{productDetails.name}}</h2>
+            <p>{{productDetails.description}}</p>
             <h3 class="product-price">
-                {{ 16.6 | currency:'&#163;' : 'symbol' : '1.2' }}
-                <span class="old-price" *ngIf="old_price>0"> {{ 18.9 | currency:'&#163;' : 'symbol' : '1.2' }} </span>
+                {{ productDetails.discounted_price | currency:'&#163;' : 'symbol' : '1.2' }}
+                <span class="old-price" *ngIf="productDetails.discounted_price>0"> {{ productDetails.price | currency:'&#163;' : 'symbol' : '1.2' }} </span>
             </h3>
         </header>
         <div>
@@ -28,20 +33,20 @@
                 <h3>Quantity</h3>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <button class="btn btn-outline-secondary qty-btn" type="button" id="decr-qty">
-                            <i class="fa fa-plus"></i>
+                        <button class="btn btn-outline-secondary qty-btn" type="button" (click)="decrementQty()">
+                            <i class="fa fa-minus"></i>
                         </button>
                     </div>
-                    <input type="text" class="form-control qty-input" maxlength="3" value="1">
+                    <input type="text" class="form-control qty-input" maxlength="3" value="{{quantity}}" disabled>
                     <div class="input-group-append">
-                        <button class="btn btn-outline-secondary qty-btn" type="button" id="incr-qty">
-                            <i class="fa fa-minus"></i>
+                        <button class="btn btn-outline-secondary qty-btn" type="button" (click)="incrementQty()">
+                            <i class="fa fa-plus"></i>
                         </button>
                     </div>
                 </div>
             </div>
             <div class="product-action">
-                <app-cbutton value="Add to Cart" class="md"> </app-cbutton>
+                <app-cbutton value="Add to Cart" class="md" (click)="addToCart()"> </app-cbutton>
             </div>
         </div>
     </article>
