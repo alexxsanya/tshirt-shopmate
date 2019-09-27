@@ -10,12 +10,15 @@ export class ProductComponent implements OnInit {
   @Input() thumbnail: string;
   @Input() price: number;
   @Input() old_price: number;
-  @Input() id: number;
+  @Input() id: string;
   isHovered: boolean = false;
 
   constructor() { }
 
   ngOnInit() {
+
+    this.id = btoa(this.id);
+
   }
 
   showInfo(){
