@@ -1,6 +1,5 @@
 import { Component, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
 import { ProductsService } from 'src/app/services/products/products.service';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { isPlatformBrowser } from '@angular/common';
@@ -21,7 +20,7 @@ export class SingleItemComponent implements OnInit {
     private route: ActivatedRoute, 
     private productsService: ProductsService,
     private ngxService: NgxUiLoaderService,
-    @Inject(PLATFORM_ID) private platformId,
+    @Inject(PLATFORM_ID) private platformId
     ) { 
       this.isBrowser = isPlatformBrowser(this.platformId);
     }
@@ -38,7 +37,6 @@ export class SingleItemComponent implements OnInit {
       this.ngxService.stopLoader('loader-product'); 
     }, 2000);
 
-    console.log(this.productDetails)
   }
 
   decrementQty = () => {
