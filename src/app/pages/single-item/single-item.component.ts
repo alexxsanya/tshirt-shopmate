@@ -38,6 +38,7 @@ export class SingleItemComponent implements OnInit {
       this.ngxService.stopLoader('loader-product'); 
     }, 2000);
 
+    console.log(this.productDetails)
   }
 
   decrementQty = () => {
@@ -57,6 +58,11 @@ export class SingleItemComponent implements OnInit {
 
     products = this.productsService.getAProduct(product_id).then(productsData => {
       return productsData;
+    })
+    .catch(err => {
+      if (err.name == 'HttpErrorResponse'){
+        console.log('Check your network connection')
+      }
     });
 
     return products;
