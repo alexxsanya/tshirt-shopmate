@@ -5,9 +5,8 @@
         [textColor]="'#f62f5e'"
         [hasProgressBar]="true"
         [overlayColor]="'transparent'"
-        *ngIf="productDetails != None"
       ></ngx-ui-loader>
-    <article class="product-show-case" *ngIf="productDetails != None">
+    <article class="product-show-case" *ngIf="productDetails.length != 0">
         <div class="product-display">
             <img src="https://backendapi.turing.com/images/products/{{productDetails.image}}" id="main-img"/>
         </div>
@@ -18,7 +17,7 @@
                 src="https://backendapi.turing.com/images/products/{{productDetails.image_2}}" />
         </div>
     </article>
-    <article class="product-details" *ngIf="productDetails != None">
+    <article class="product-details" *ngIf="productDetails.length != 0">
             <header>
                 <div class="product-rating">
                     <bar-rating
