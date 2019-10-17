@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { titleCase } from 'src/app/shared/util/tools';
-import { DepartmentsService } from 'src/app/services/departments.service';
+import { DepartmentsService } from 'src/app/services/departments/departments.service';
 import { Department, Category } from 'src/app/models';
 
 @Component({
