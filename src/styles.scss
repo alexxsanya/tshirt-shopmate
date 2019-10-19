@@ -20,3 +20,39 @@ body {
     }
   }
 }
+
+.my-pagination {
+  margin: auto;
+  
+  .ngx-pagination .pagination-previous a::before, .ngx-pagination .pagination-previous.disabled::before {
+    content: '<';
+    margin-right: 0.5rem;
+    background: #eaeaea;
+    color: #2e2e2e;
+    width: 30px;
+    text-align: center;
+    vertical-align: center;
+    border-radius: 15px;
+  }
+  .ngx-pagination li {
+    margin: 0 2px;
+  }
+  .ngx-pagination li a, .ngx-pagination li {
+    border-radius: 15px;
+    outline: none;
+  }
+  .ngx-pagination li a:hover {
+    text-decoration: none;
+  }
+  .ngx-pagination .current {
+    padding: 0.1875rem 0.625rem;
+    background: $our-redish !important;
+    color: #fefefe;
+  }
+
+  .pagination-previous a:hover, .pagination-next a:hover {
+    background-color: transparent;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
