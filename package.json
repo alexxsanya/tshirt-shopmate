@@ -39,6 +39,7 @@
     "jquery": "^3.4.1",
     "ng5-slider": "^1.2.4",
     "ngx-bar-rating": "^1.1.0",
+    "ngx-pagination": "^4.1.0",
     "ngx-ui-loader": "^8.0.0",
     "popper.js": "^1.15.0",
     "rxjs": "~6.4.0",
