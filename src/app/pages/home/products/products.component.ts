@@ -18,30 +18,18 @@ export class ProductsComponent implements OnInit {
     private productsService: ProductsService,
     private store: Store<any>) { }
 
-  // async ngOnInit() {
-  //   // this.productStore = await this.getProducts();
-
-  //   // console.log(this.productStore)
-
-  //   // this.ngxService.startBackground('loader-products');
-  //   // // Do something here...
-  //   // this.productStore = await this.getProducts();
-  //   // this.ngxService.stopBackground('loader-products');
-
-  //   this.ngxService.startLoader('loader-products'); 
-  //   this.productStore = await this.getProducts();
-  //   setTimeout(() => {
-  //     this.ngxService.stopLoader('loader-products'); 
-  //   }, 2000);
-  // }
-
   ngOnInit() {
+    this.ngxService.startLoader('loader-products');
+
     this.store.dispatch(new productsActions.LoadProducts());
-    // this.store.subscribe(state => (this.productStore = state.products.rows));
     this.store.subscribe((state) => {
       this.productStore = state.products.products;
       console.log(this.productStore);
     });
+
+    setTimeout(() => {
+      this.ngxService.stopLoader('loader-products');
+    }, 2000);
   }
 
   getProducts() {
