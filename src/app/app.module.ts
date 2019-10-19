@@ -13,11 +13,20 @@ import { ProductComponent } from './components/product/product.component';
 import { CbuttonComponent } from './components/cbutton/cbutton.component';
 import { FilterComponent } from './components/filter/filter.component';
 import { NgxUiLoaderModule, NgxUiLoaderRouterModule,
-  NgxUiLoaderConfig, SPINNER, POSITION, PB_DIRECTION 
-} from  'ngx-ui-loader';
+  NgxUiLoaderConfig, SPINNER, POSITION, PB_DIRECTION
+} from 'ngx-ui-loader';
 import { FooterComponent } from './components/footer/footer.component';
 import { SingleItemComponent } from './pages/single-item/single-item.component';
-import { BarRatingModule } from "ngx-bar-rating";
+import { BarRatingModule } from 'ngx-bar-rating';
+
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { EffectsModule, Actions } from '@ngrx/effects';
+
+import { productsReducer } from 'src/app/pages/home/products/state/products.reducer';
+import { ProductsEffects } from 'src/app/pages/home/products/state/products.effects';
+
+import {NgxPaginationModule} from 'ngx-pagination';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   bgsColor: '#f62f5e',
@@ -49,14 +58,19 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     HttpClientModule,
-    Ng5SliderModule,    
+    Ng5SliderModule,
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig), // import NgxUiLoaderModule
     NgxUiLoaderRouterModule, // import NgxUiLoaderRouterModule. By default, it will show foreground loader.
     // If you need to show background spinner, do as follow:
     // NgxUiLoaderRouterModule.forRoot({ showForeground: false })
     BarRatingModule,
+    StoreModule.forRoot({products: productsReducer}),
+    StoreDevtoolsModule.instrument(),
+    EffectsModule.forRoot([]),
+    EffectsModule.forFeature([ProductsEffects]),
+    NgxPaginationModule,
   ],
-  providers: [],
+  providers: [Actions, EffectsModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
