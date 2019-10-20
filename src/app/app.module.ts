@@ -26,6 +26,9 @@ import { EffectsModule, Actions } from '@ngrx/effects';
 import { productsReducer } from 'src/app/pages/home/products/state/products.reducer';
 import { ProductsEffects } from 'src/app/pages/home/products/state/products.effects';
 
+import { productReducer } from 'src/app/pages/single-item/state/product.reducer';
+import { ProductEffects } from 'src/app/pages/single-item/state/product.effects';
+
 import {NgxPaginationModule} from 'ngx-pagination';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
@@ -64,10 +67,10 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     // If you need to show background spinner, do as follow:
     // NgxUiLoaderRouterModule.forRoot({ showForeground: false })
     BarRatingModule,
-    StoreModule.forRoot({products: productsReducer}),
+    StoreModule.forRoot({products: productsReducer, product: productReducer}),
     StoreDevtoolsModule.instrument(),
     EffectsModule.forRoot([]),
-    EffectsModule.forFeature([ProductsEffects]),
+    EffectsModule.forFeature([ProductsEffects, ProductEffects]),
     NgxPaginationModule,
   ],
   providers: [Actions, EffectsModule],
