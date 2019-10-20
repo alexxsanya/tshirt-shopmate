@@ -22,14 +22,25 @@ body {
 }
 
 .my-pagination {
-  margin: auto;
+  // margin: auto;
   
   .ngx-pagination .pagination-previous a::before, .ngx-pagination .pagination-previous.disabled::before {
     content: '<';
     margin-right: 0.5rem;
     background: #eaeaea;
     color: #2e2e2e;
-    width: 30px;
+    padding: 0.1875rem 0.625rem;
+    text-align: center;
+    vertical-align: center;
+    border-radius: 15px;
+  }
+
+  .ngx-pagination .pagination-next a::after, .ngx-pagination .pagination-next.disabled::after {
+    content: '>';
+    margin-right: 0.5rem;
+    background: #eaeaea;
+    color: #2e2e2e;
+    padding: 0.1875rem 0.625rem;
     text-align: center;
     vertical-align: center;
     border-radius: 15px;
