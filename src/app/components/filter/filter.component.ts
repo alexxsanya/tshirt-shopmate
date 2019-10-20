@@ -2,6 +2,7 @@ import { Component, OnInit, Inject, PLATFORM_ID, asNativeElements } from '@angul
 import { Options } from 'ng5-slider';
 import { isPlatformBrowser } from '@angular/common'; 
 import { Color, Size } from 'src/app/models';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-filter',
@@ -17,20 +18,21 @@ export class FilterComponent implements OnInit {
     step: 10,
   };
   isBrowser: boolean;
-  colors:Array<Color>;
-  sizes:Array<Size> = [{
+  colors: Array<Color>;
+  sizes: Array<Size> = [{
     name: 'default',
     status: 'false'
   }];
-  filterCriteria:Object = {
-    size:[],
-    colors:[],
-    price:{
-      maxValue:this.maxValue,
+  filterCriteria: Object = {
+    size: [],
+    colors: [],
+    price: {
+      maxValue: this.maxValue,
       minValue: this.minValue
     }
-  }
-  constructor(@Inject(PLATFORM_ID) private platformId) {
+  };
+  productTotal: number = 0;
+  constructor(@Inject(PLATFORM_ID) private platformId, private store: Store<any>) {
     this.isBrowser = isPlatformBrowser(this.platformId);
     this.colors = [
       {
@@ -53,7 +55,7 @@ export class FilterComponent implements OnInit {
         name: 'blue',
         status: 'false'
       },
-    ]
+    ];
     this.sizes = [
       {
         name: 'XS',
@@ -79,28 +81,32 @@ export class FilterComponent implements OnInit {
         name: 'XXL',
         status: 'false'
       }
-    ]
+    ];
    }
 
   ngOnInit() {
+    this.store.subscribe((state) => {
+      const productTotal$ = state.products.products;
+      this.productTotal = productTotal$.count;
+    });
   }
 
   selectProp = (prop) => {
     const clr = document.getElementById(`btn-${prop.name}`);
 
-    prop.status = prop.status=='active' ? 'false' : 'active';
+    prop.status = prop.status === 'active' ? 'false' : 'active';
 
-    if (prop.status=='false') clr.classList.remove('active')
-    
+    if (prop.status === 'false') { clr.classList.remove('active'); }
+
   }
 
   applyFilter = () => {
-    console.log(this.filterCriteria)
+    console.log(this.filterCriteria);
   }
 
   getSelected = (items, type) => {
     Object.keys(items).reduce((acc, key) => {
-      if (items[key].status == 'active') this.filterCriteria[type].push(items[key].name);
+      if (items[key].status === 'active') { this.filterCriteria[type].push(items[key].name); }
       return acc;
     });
   }
