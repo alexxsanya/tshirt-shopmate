@@ -34,13 +34,4 @@ export class ProductsComponent implements OnInit {
     }, 2000);
   }
 
-  getProducts() {
-    let products: any = [];
-
-    products = this.productsService.getProducts(6).then(productsData => {
-      return productsData;
-    });
-
-    return products;
-  }
 }
