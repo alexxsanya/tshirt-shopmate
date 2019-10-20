@@ -13,6 +13,8 @@ import * as productsActions from 'src/app/pages/home/products/state/products.act
 })
 export class ProductsComponent implements OnInit {
   productStore:any = {};
+  p:number = 0;
+
   constructor(
     private ngxService: NgxUiLoaderService,
     private productsService: ProductsService,
