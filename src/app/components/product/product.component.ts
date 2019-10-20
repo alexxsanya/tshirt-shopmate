@@ -9,7 +9,7 @@ export class ProductComponent implements OnInit {
   @Input() name: string;
   @Input() thumbnail: string;
   @Input() price: number;
-  @Input() old_price: number;
+  @Input() discounted_price: number;
   @Input() id: string;
   isHovered: boolean = false;
 

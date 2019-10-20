@@ -26,7 +26,12 @@
                 <h2>{{productDetails.name}}</h2>
                 <p>{{productDetails.description}}</p>
                 <h3 class="product-price">
-                    {{ productDetails.discounted_price | currency:'&#163;' : 'symbol' : '1.2' }}
+                    <span *ngIf="productDetails.discounted_price > 0">
+                        {{ productDetails.discounted_price | currency:'&#163;' : 'symbol' : '1.2' }}
+                    </span>
+                    <span *ngIf="productDetails.discounted_price == 0">
+                        {{ productDetails.price | currency:'&#163;' : 'symbol' : '1.2' }}
+                    </span>
                     <span class="old-price" *ngIf="productDetails.discounted_price>0"> {{ productDetails.price | currency:'&#163;' : 'symbol' : '1.2' }} </span>
                 </h3>
             </header>
