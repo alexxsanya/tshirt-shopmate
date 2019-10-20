@@ -31,8 +31,9 @@ export class SingleItemComponent implements OnInit {
     this.product_id = atob(this.product_id);
     this.ngxService.startLoader('loader-product');
 
+    const productId = parseInt(this.product_id, 10);
 
-    this.store.dispatch(new productActions.LoadProduct());
+    this.store.dispatch(new productActions.LoadProduct(productId));
     this.store.subscribe((state) => {
       this.productDetails = state.product.product;
       this.productDetails.rating = Math.floor(Math.random() * 5) + 1;

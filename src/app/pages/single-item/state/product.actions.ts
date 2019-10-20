@@ -10,6 +10,7 @@ export enum ProductActionTypes {
 
 export class LoadProduct implements Action {
   readonly type = ProductActionTypes.LOAD_Product;
+  constructor(public payload: number) {}
 }
 
 export class LoadProductSucess implements Action {
