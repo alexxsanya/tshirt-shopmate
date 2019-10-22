@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
-import { ProductsService } from 'src/app/services/products/products.service';
 import { Product } from 'src/app/models/product';
 
 import { Store } from '@ngrx/store';
@@ -17,7 +16,6 @@ export class ProductsComponent implements OnInit {
 
   constructor(
     private ngxService: NgxUiLoaderService,
-    private productsService: ProductsService,
     private store: Store<any>) { }
 
   ngOnInit() {
