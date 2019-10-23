@@ -15,7 +15,7 @@
   <div class="grid-layout">
     <div class="products-grid">
       <div class="item" 
-        *ngFor="let product of productStore.rows | paginate: { itemsPerPage: 8, currentPage: p }">
+        *ngFor="let product of productStore.rows | paginate: { itemsPerPage: 12, currentPage: p }">
           <app-product id={{product.product_id}}
               name={{product.name}}
               thumbnail="https://backendapi.turing.com/images/products/{{product.thumbnail}}"
