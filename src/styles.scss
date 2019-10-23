@@ -4,8 +4,9 @@
 
 body {
   background: $bg-light;
-  max-width: 1500px;
   min-width: 1024px;
+  width: 100%;
+  margin: auto;
 }
 
 .br-unit {

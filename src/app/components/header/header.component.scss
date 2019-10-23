@@ -4,13 +4,13 @@
   background-color: $bg-black !important;
   border-bottom: 1px dashed #ededed;
   min-height: 50px;
+  width: 100%;
+  margin: auto;
 
   .cust-main-navbar {
     background-color: $bg-black !important;
-    margin: 0 5rem;
-    max-width: 1500px;
-    min-width: 1024px;
-    padding: .5rem 0;
+    padding: 0.2rem 3.6rem;
+    margin-left: 10px;
 
     .navbar-brand {
       color: $our-redish;
