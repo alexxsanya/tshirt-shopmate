@@ -30,6 +30,7 @@ import { productReducer } from 'src/app/pages/single-item/state/product.reducer'
 import { ProductEffects } from 'src/app/pages/single-item/state/product.effects';
 
 import {NgxPaginationModule} from 'ngx-pagination';
+import { LoginComponent } from './components/login/login.component';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   bgsColor: '#f62f5e',
@@ -55,7 +56,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     CbuttonComponent,
     FilterComponent,
     FooterComponent,
-    SingleItemComponent
+    SingleItemComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
