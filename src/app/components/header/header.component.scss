@@ -7,6 +7,10 @@
   width: 100%;
   margin: auto;
 
+  &.sticky-top {
+    margin-right: 0 !important;
+    padding-right: 0 !important;
+  }
   .cust-main-navbar {
     background-color: $bg-black !important;
     padding: 0.2rem 3.6rem;
@@ -71,6 +75,20 @@
         position: absolute;
         right: 5px;
         top: 0;
+      }
+    }
+
+    .users {
+      color: #fff;
+      cursor: pointer;
+
+      &:hover {
+        color: $our-redish;
+      }
+      .labels {
+        text-transform: lowercase;
+        margin-left: 4px;
+        font-style: normal;
       }
     }
   }
