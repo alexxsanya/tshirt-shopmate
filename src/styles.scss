@@ -76,3 +76,28 @@ body {
     cursor: pointer;
   }
 }
+
+.modal-dialog {
+  width: 400px;
+
+  .modal-content {
+    border-radius: 0.3rem;
+    padding: 15px 20px;
+
+    .modal-open {
+      padding-right: 0 !important;
+    }
+  
+    .modal-header {
+      padding: 0.4rem 0.4rem;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+  
+    h5.modal-title {
+      text-align: center;
+      width: 100%;
+    }
+  
+  }
+}
