@@ -31,6 +31,9 @@ import { ProductEffects } from 'src/app/pages/single-item/state/product.effects'
 
 import {NgxPaginationModule} from 'ngx-pagination';
 import { LoginComponent } from './components/login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { LoginEffects } from './components/login/state/login.effects';
+import { userReducer } from './components/login/state/login.reducers';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   bgsColor: '#f62f5e',
@@ -69,11 +72,12 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     // If you need to show background spinner, do as follow:
     // NgxUiLoaderRouterModule.forRoot({ showForeground: false })
     BarRatingModule,
-    StoreModule.forRoot({products: productsReducer, product: productReducer}),
+    StoreModule.forRoot({products: productsReducer, product: productReducer, user: userReducer}),
     StoreDevtoolsModule.instrument(),
     EffectsModule.forRoot([]),
-    EffectsModule.forFeature([ProductsEffects, ProductEffects]),
+    EffectsModule.forFeature([ProductsEffects, ProductEffects, LoginEffects]),
     NgxPaginationModule,
+    ReactiveFormsModule,
   ],
   providers: [Actions, EffectsModule],
   bootstrap: [AppComponent]
