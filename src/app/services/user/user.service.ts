@@ -10,9 +10,8 @@ export class UserService {
 
   constructor(private http: HttpClient) {}
 
-  loginUser({user}): Observable<any> {
-    return this.http.get(`${environment.api_url}/customers/login`);
+  loginUser(userFormData): Observable<any> {
+    return this.http.post(`${environment.api_url}/customers/login`, userFormData);
   }
-
 
 }
