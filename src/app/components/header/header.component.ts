@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-header',
@@ -6,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  searchForm: FormGroup;
 
-  constructor() { }
-
+  constructor(public fb: FormBuilder) {
+    this.searchForm = this.fb.group({
+      search: [''],
+    });
+  }
   ngOnInit() {
   }
 
