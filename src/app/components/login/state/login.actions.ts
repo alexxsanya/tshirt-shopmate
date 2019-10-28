@@ -1,5 +1,4 @@
 import { Action } from '@ngrx/store';
-import { Product } from 'src/app/models/product';
 
 export enum LoginActionTypes {
   LOAD_LOGIN = '[Login] Load Login',
@@ -10,7 +9,7 @@ export enum LoginActionTypes {
 
 export class LoadLogin implements Action {
   readonly type = LoginActionTypes.LOAD_LOGIN;
-  constructor(public payload: {}) {}
+  constructor(public payload: any) {}
 }
 
 export class LoadLoginSucess implements Action {

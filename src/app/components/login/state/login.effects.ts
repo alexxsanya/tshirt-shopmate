@@ -10,7 +10,7 @@ import * as LoginActions from './login.actions';
 import { UserService } from 'src/app/services/user/user.service';
 
 @Injectable()
-export class ProductsEffects {
+export class LoginEffects {
   constructor(
       private userService: UserService,
       private action$: Actions
@@ -22,7 +22,7 @@ export class ProductsEffects {
         LoginActions.LoginActionTypes.LOAD_LOGIN
     ),
     mergeMap((actions: LoginActions.LoadLogin) =>
-      this.userService.loginUser({user: {}}).pipe(
+      this.userService.loginUser({email: '', password: ''}).pipe(
         map((products: any) =>
           new LoginActions.LoadLoginSucess(products)
         ),

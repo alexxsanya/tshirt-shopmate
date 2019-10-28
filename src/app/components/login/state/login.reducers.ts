@@ -19,7 +19,7 @@ export const initialState: UserState = {
   error: ''
 };
 
-export function productsReducer(
+export function userReducer(
   state = initialState,
   action: LoginActions.Action
 ): UserState {
