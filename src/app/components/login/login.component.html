@@ -1,4 +1,11 @@
 <div class="modal fade" id="loginModalCenter" tabindex="-1" role="dialog" aria-labelledby="loginModalCenterTitle" aria-hidden="true">
+<ngx-ui-loader 
+    [loaderId]="'loader-login'"
+    [text]="'Processing...'"
+    [textColor]="'#f62f5e'"
+    [hasProgressBar]="true"
+    [overlayColor]="'transparent'"
+    ></ngx-ui-loader>
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
         <div class="modal-header">
