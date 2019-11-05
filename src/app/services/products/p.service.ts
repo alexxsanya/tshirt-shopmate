@@ -12,7 +12,7 @@ export class ProductsService {
   constructor(private http: HttpClient) {}
 
   getProducts(limit): Observable<Product[]> {
-    return this.http.get<Product[]>(`${environment.api_url}/products?limit=101`);
+    return this.http.get<Product[]>(`${environment.api_url}/products?limit=${limit}`);
   }
 
   getProductById(productID: number): Observable<Product> {

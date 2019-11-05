@@ -23,7 +23,7 @@ export class ProductsEffects {
       ProductsActions.ProductsActionTypes.LOAD_PRODUCTS
     ),
     mergeMap((actions: ProductsActions.LoadProducts) =>
-      this.productsService.getProducts(9).pipe(
+      this.productsService.getProducts(101).pipe(
         map((products: any) =>
           new ProductsActions.LoadProductsSucess(products)
         ),
