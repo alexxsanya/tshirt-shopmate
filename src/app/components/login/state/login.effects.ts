@@ -21,13 +21,15 @@ export class LoginEffects {
     ofType<LoginActions.LoadLogin>(
         LoginActions.LoginActionTypes.LOAD_LOGIN
     ),
-    mergeMap((actions: LoginActions.LoadLogin) =>
-      this.userService.loginUser({email: '', password: ''}).pipe(
-        map((products: any) =>
-          new LoginActions.LoadLoginSucess(products)
+    map( (action: LoginActions.LoadLogin) => action.payload ),
+      mergeMap((user) =>
+      this.userService.loginUser(user).pipe(
+        map((loggedInUser: any) =>
+          new LoginActions.LoadLoginSucess(loggedInUser)
         ),
         catchError(err => of(new LoginActions.LoadLoginFail(err)))
       )
     )
+
   );
 }
