@@ -46,11 +46,11 @@ export class SingleItemComponent implements OnInit {
   }
 
   decrementQty = () => {
-    this.quantity = this.quantity < 2 ? 1: this.quantity -= 1;
+    this.quantity = this.quantity < 2 ? 1 : this.quantity -= 1;
   }
 
   incrementQty = () => {
-    this.quantity +=1
+    this.quantity += 1;
   }
 
   addToCart = () => {
