@@ -34,6 +34,7 @@ import { LoginComponent } from './components/login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginEffects } from './components/login/state/login.effects';
 import { userReducer } from './components/login/state/login.reducers';
+import { LocalStorageService } from './shared/util/localStorageService';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   bgsColor: '#f62f5e',
@@ -79,7 +80,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     NgxPaginationModule,
     ReactiveFormsModule,
   ],
-  providers: [Actions, EffectsModule],
+  providers: [Actions, EffectsModule, LocalStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
