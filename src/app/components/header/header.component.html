@@ -33,13 +33,13 @@
       <span class="navbar-toggler-icon"></span>
     </button>
  
-    <div class="navbar users"
+    <div class="navbar users" *ngIf='!isLoggedIn'
       data-toggle="modal" data-target="#loginModalCenter">
       <i class="fa fa-sign-in"></i>
       <i class="labels"> Login</i>
     </div>
 
-    <div class="navbar users" 
+    <div class="navbar users" *ngIf='!isLoggedIn'
       data-toggle="modal" data-target="#loginModalCenter">
       <i class="fa fa-user-plus"></i>
       <i class="labels"> SignUp</i>
