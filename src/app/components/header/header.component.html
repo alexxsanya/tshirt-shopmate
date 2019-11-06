@@ -44,5 +44,10 @@
       <i class="fa fa-user-plus"></i>
       <i class="labels"> SignUp</i>
     </div>
+
+    <div class="navbar users" *ngIf='isLoggedIn' (click)='logout()'>
+      <i class="fa fa-sign-out"></i>
+      <i class="labels"> Logout</i>
+    </div>
   </nav>
 <div>
