@@ -14,4 +14,8 @@ export class UserService {
     return this.http.post(`${environment.api_url}/customers/login`, userFormData);
   }
 
+  createUser(userFormData): Observable<any> {
+    console.log(userFormData);
+    return this.http.post(`${environment.api_url}/customers`, userFormData);
+  }
 }
