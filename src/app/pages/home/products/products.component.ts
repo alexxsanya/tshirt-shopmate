@@ -11,8 +11,8 @@ import * as productsActions from 'src/app/pages/home/products/state/products.act
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
-  productStore:any = {};
-  p:number = 0;
+  productStore: Array<any> = [];
+  p: number = 0;
 
   constructor(
     private ngxService: NgxUiLoaderService,
@@ -27,9 +27,11 @@ export class ProductsComponent implements OnInit {
       console.log(this.productStore);
     });
 
-    setTimeout(() => {
-      this.ngxService.stopLoader('loader-products');
-    }, 2000);
+    if (this.productStore.length > 0) {
+      setTimeout(() => {
+        this.ngxService.stopLoader('loader-products');
+      }, 2000);
+    }
   }
 
 }
