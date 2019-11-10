@@ -76,12 +76,14 @@
         position: absolute;
         right: 5px;
         top: 0;
+        transition: 3s all cubic-bezier(0.075, 0.82, 0.165, 1);
       }
     }
 
     .users {
       color: #fff;
       cursor: pointer;
+      transition: 2s all cubic-bezier(0.075, 0.82, 0.165, 1);
 
       &:hover {
         color: $our-redish;
