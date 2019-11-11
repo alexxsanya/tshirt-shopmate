@@ -1,0 +1,45 @@
+<div class="app-filter">
+    <div class="filter-head">
+        <h3>Filter {{productTotal}} Items</h3>
+        <p>Category: <span>French</span></p>
+        <p>Department: <span>Regional</span></p>
+    </div>
+
+    <div class="filter-form">
+        <div class="filter">
+            <h3>Color</h3>
+            <div class="filter-main">
+                <div *ngFor = "let color of colors">
+                    <div class="color-button {{color.status}}" id="btn-{{color.name}}" 
+                        (click)="selectProp(color)">
+                        <div class="inner {{color.name}}"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="filter">
+            <h3>Size</h3>
+            <div class="filter-main">
+                <div *ngFor = "let size of sizes">
+                    <div class="size-button {{size.status}}" 
+                    (click)='selectProp(size)' id="btn-{{size.name}}" >{{size.name}}</div> 
+                </div>
+            </div>
+        </div>
+        <div class="filter">
+            <h3>Price range</h3>
+            <div class="filter-main">
+                <div class="custom-slider" *ngIf='isBrowser'>
+                    <ng5-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options"></ng5-slider>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="filter-action">
+        <app-cbutton value="Apply" (click)="applyFilter()"></app-cbutton>
+        <div class="clear-btn">
+            <span>x Clear All</span>
+        </div>
+    </div>
+
+</div>

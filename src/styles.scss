@@ -1,1 +1,103 @@
-/* You can add global styles to this file, and also import other style files */
+// You can add global styles to this file, and also import other style files 
+@import 'variables';
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+body {
+  background: $bg-light;
+  min-width: 1024px;
+  width: 100%;
+  margin: auto;
+}
+
+.br-unit {
+  font-size: 25px !important;
+  height: 18px;
+  margin-right: 9px;
+  width: 18px;
+
+  &.br-selected {
+    &::after {
+      color: $our-redish;
+    }
+  }
+}
+
+.my-pagination {
+  margin: auto;
+  
+  .ngx-pagination .pagination-previous a::before, .ngx-pagination .pagination-previous.disabled::before {
+    content: '<';
+    margin-right: 0.5rem;
+    background: #eaeaea;
+    color: #2e2e2e;
+    padding: 0.1875rem 0.625rem;
+    text-align: center;
+    vertical-align: center;
+    border-radius: 15px;
+  }
+
+  .ngx-pagination .pagination-next a::after, .ngx-pagination .pagination-next.disabled::after {
+    content: '>';
+    margin-right: 0.5rem;
+    background: #eaeaea;
+    color: #2e2e2e;
+    padding: 0.1875rem 0.625rem;
+    text-align: center;
+    vertical-align: center;
+    border-radius: 15px;
+  }
+  .ngx-pagination {
+    margin-top: 1.5rem;
+  }
+
+  ul.ngx-pagination.responsive {
+    width: 100%;
+    padding-left: 0;
+  }
+  .ngx-pagination li {
+    margin: 0 2px;
+  }
+  .ngx-pagination li a, .ngx-pagination li {
+    border-radius: 15px;
+    outline: none;
+  }
+  .ngx-pagination li a:hover {
+    text-decoration: none;
+  }
+  .ngx-pagination .current {
+    padding: 0.1875rem 0.625rem;
+    background: $our-redish !important;
+    color: #fefefe;
+  }
+
+  .pagination-previous a:hover, .pagination-next a:hover {
+    background-color: transparent;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
+.modal-dialog {
+  width: 400px;
+
+  .modal-content {
+    border-radius: 0.3rem;
+    padding: 15px 20px;
+
+    .modal-open {
+      padding-right: 0 !important;
+    }
+  
+    .modal-header {
+      padding: 0.4rem 0.4rem;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+  
+    h5.modal-title {
+      text-align: center;
+      width: 100%;
+    }
+  
+  }
+}

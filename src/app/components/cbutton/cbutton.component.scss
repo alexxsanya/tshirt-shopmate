@@ -1,0 +1,33 @@
+@import '../../../variables';
+
+.cbutton {
+  background: $our-redish;
+  border-color: $our-redish;
+  border-radius: 20px;
+  font-weight: 500;
+  min-width: 130px;
+  padding: 4px 20px;
+  transition: background .8s;
+
+  &:hover {
+    background: rgba($our-redish, .5);
+  }
+
+  &:focus,
+  &:hover {
+    border-color: $our-redish;
+    box-shadow: 0 0 0 1px rgba($our-redish, .5);
+  }
+
+  &.md {
+    border-radius: 25px;
+    font-size: 1.4em;
+    padding: 12px 45px;
+  }
+
+  &.lg {
+    border-radius: 40px;
+    font-size: 1.8em;
+    padding: 15px 65px;
+  }
+}

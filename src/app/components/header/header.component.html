@@ -1,0 +1,53 @@
+<div class="app-header sticky-top ">
+  <nav class="navbar navbar-expand navbar-dark bg-dark cust-main-navbar">
+    <a class="navbar-brand" href="/">TSHIRT SHOPMATE</a>
+  
+    <div class="collapse navbar-collapse menu" id="navbar-menu">
+      <ul class="navbar-nav mr-5 cust-menu-bar" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="dept/regional" 
+            routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" >Regional </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="dept/nature"
+            routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" >Nature <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="dept/seasonal" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Seasonal</a>
+        </li>
+      </ul>
+      <form class="form-inline my-lg-0 mr-auto cust-search-form"
+        [formGroup] = "searchForm">
+          <i class="fa fa-search search-icon"></i>
+        <input class="form-control mr-sm-2" type="search" placeholder="search anything" aria-label="Search">
+      </form>
+      <div class="navbar shopping-cart">
+        <i class="fa fa-shopping-bag"></i>
+        <span class="badge badge-light">4</span>
+      </div>
+    </div>
+
+    <button class="navbar-toggler" type="button" 
+      data-toggle="collapse" data-target="#navbar-menu"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+ 
+    <div class="navbar users" *ngIf='!isLoggedIn'
+      data-toggle="modal" data-target="#loginModalCenter">
+      <i class="fa fa-sign-in"></i>
+      <i class="labels"> Login</i>
+    </div>
+
+    <div class="navbar users" *ngIf='!isLoggedIn'
+      data-toggle="modal" data-target="#signupModalCenter">
+      <i class="fa fa-user-plus"></i>
+      <i class="labels"> SignUp</i>
+    </div>
+
+    <div class="navbar users" *ngIf='isLoggedIn' (click)='logout()'>
+      <i class="fa fa-sign-out"></i>
+      <i class="labels"> Logout</i>
+    </div>
+  </nav>
+<div>

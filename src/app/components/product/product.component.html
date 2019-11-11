@@ -1,0 +1,19 @@
+<div class="app-product">
+    <div [ngClass]="isHovered?'app-cover-info':'hide-cover-info'" (mouseleave)="showInfo()">
+      <i class="fa fa-heart-o" (click)='favorite()'></i>
+      <app-cbutton link="/product/{{id}}" value="Quick view"> </app-cbutton>
+    </div>
+    <img class="thumbnail" [src]='thumbnail' (mouseenter)="showInfo()"/>
+    <h3 class="product-name">{{name}}</h3>
+    <h3 class="product-price"> 
+      <span *ngIf="discounted_price > 0">
+          {{ discounted_price | currency:'&#163;' : 'symbol' : '1.2' }}
+      </span>
+      <span *ngIf="discounted_price == 0">
+          {{ price | currency:'&#163;' : 'symbol' : '1.2' }}
+      </span>
+      <span class="old-price" *ngIf="discounted_price>0"> {{ price | currency:'&#163;' : 'symbol' : '1.2' }} </span>
+    </h3>
+    <app-cbutton value="Buy now"> </app-cbutton>
+
+</div>

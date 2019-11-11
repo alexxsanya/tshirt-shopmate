@@ -1,0 +1,114 @@
+@import '../../../variables';
+
+.banner-container {
+  /* background: linear-gradient(90deg,#aca9a3 62%,#626765 95%); */
+  background: no-repeat url(https://ak8.picdn.net/shutterstock/videos/12199718/thumb/1.jpg);
+  background-attachment: fixed;
+  background-position: right;
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 30px auto;
+  width: 88.7%;
+
+  .app-banner {
+    background-position: right 40px center;
+    background-repeat: no-repeat;
+    background-size: 30% 90%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-height: 427px;
+    padding: 80px 100px;
+    width: 100%;
+
+    .banner-title {
+      color: $our-redish;
+      display: flex;
+      font-size: 3.4em;
+      font-weight: 900;
+      margin-bottom: 5px;
+      width: 100%;
+    }
+
+    .banner-items {
+      background: rgba($black, .4);
+      border-radius: 2px;
+      display: flex;
+      flex-wrap: wrap;
+      height: 24px;
+      justify-content: space-evenly;
+      max-width: 60%;
+      min-width: 20%;
+
+      div a {
+        color: $white;
+        flex: 1 1 33.3%;
+        font-size: 1em;
+        font-weight: 300;
+        min-width: 150px;
+
+        &:hover {
+          color: rgba($black, .8);
+          text-decoration: none;
+        }
+      }
+
+    }
+
+    h3 {
+      color: $black;
+      display: flex;
+      font-weight: 300;
+      margin-bottom: 50px;
+      text-shadow: 2px 2px 4px $white;
+      width: 90%;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .banner-container {
+    margin: 0 auto;
+    width: 100%;
+
+    .app-banner {
+      background-position: right 5px center;
+      min-height: 10vh;
+      padding: 5px 10px;
+
+      .banner-title {
+        font-size: 1.5em;
+        margin-bottom: 5px;
+      }
+
+      .banner-items {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        max-width: 60%;
+        min-width: 20%;
+        
+        div {
+          margin-right: 5px;
+
+          a {
+            font-size: 1rem;
+          }
+        }
+
+      }
+
+      h3 {
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+        max-width: 75ch;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,134 @@
+@import '../../../variables';
+
+.app-single-item {
+  background-color: $white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 20px auto;
+  min-height: 600px;
+  position: relative;
+  width: 88.7%;
+
+  .product-show-case {
+    align-items: center;
+    border-right: 1px solid $bg-light;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 45%;
+
+    .product-display {
+      display: flex;
+      height: 350px;
+      justify-content: center;
+      width: 80%;
+
+      img {
+        height: 300px;
+        width: 300px;
+      }
+    }
+
+    .product-thumbnails {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      height: 100px;
+      justify-content: center;
+      margin-top: 10px;
+      overflow-x: auto;
+      width: 80%;
+
+      img {
+        height: 80px;
+        margin: 0 5px;
+        width: 80px;
+
+        &:hover {
+          border: 1px solid $our-redish;
+          cursor: pointer;
+        }
+
+        &.active {
+          border: 1px solid $our-redish;
+        }
+      }
+    }
+  }
+
+  .product-details {
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+    width: 50%;
+
+    .product-rating {
+      margin: 30px 0;
+    }
+
+    h3 {
+      color: $our-gray;
+      font-size: 1.4em;
+    }
+
+    .product-price {
+      color: $our-redish;
+      font-size: 1.7em;
+      font-weight: 700;
+      margin: 40px 0;
+
+      .old-price {
+        color: $our-gray;
+        font-size: .6em;
+        text-decoration: line-through;
+      }
+    }
+
+    .product-qty {
+      .input-group {
+        margin-top: 20px;
+        width: 150px;
+      }
+
+      .qty-input {
+        background: transparent;
+        border-radius: 15px;
+        margin: 0 10px;
+        text-align: center;
+
+        &:focus,
+        &:active {
+          border-color: $our-redish;
+          box-shadow: none;
+        }
+
+      }
+
+      .qty-btn {
+        background-color: $bg-light;
+        border: 0;
+        border-radius: 49%;
+        color: $black;
+        font-weight: 400;
+        height: 37px;
+        text-align: center;
+        width: 36px;
+
+        &:focus,
+        &:active {
+          box-shadow: none;
+        }
+
+        &:hover {
+          background-color: $our-gray;
+          color: $white;
+        }
+      }
+    }
+
+    .product-action {
+      margin-top: 50px;
+    }
+  }
+}

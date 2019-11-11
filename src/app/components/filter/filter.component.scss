@@ -1,0 +1,185 @@
+@import '../../../variables';
+
+.app-filter {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 100%;
+
+  .filter-head {
+    background-color: $bg-light;
+    border-bottom: 1px solid $bg-light;
+    border-left: 1px dashed #ededed;
+    border-top: 1px dashed #ededed;
+    border-right: 1px dashed #ededed;
+    height: 150px;
+    padding: 20px;
+    width: 100%;
+
+    h3 {
+      font-size: 1.4em;
+      margin-bottom: 20px;
+    }
+
+    p {
+      color: $our-gray;
+      margin: 0;
+
+      span {
+        color: $our-gray-l;
+      }
+    }
+  }
+
+  .filter-form {
+    padding: 20px;
+
+    .filter {
+
+      h3 {
+        color: $our-gray;
+        font-size: 1.4em;
+      }
+
+      .filter-main {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-bottom: 25px;
+        min-height: 40px;
+        padding: 5px 0;
+      }
+
+      .size-button {
+        background: $bg-light;
+        border-radius: 3px;
+        color: #7f7f7f;
+        cursor: pointer;
+        height: 34px;
+        margin: 2px 5px 5px 0;
+        padding: 5px 10px;
+        text-align: center;
+        width: 70px;
+
+        &.active {
+          background-color: $our-redish;
+          color: $white;
+
+          &:hover {
+            border: 0;
+          }
+        }
+
+        &:hover {
+          border: 1px solid rgba($color: #7f7f7f, $alpha: .5);
+        }
+      }
+
+      .color-button {
+        align-content: center;
+        align-items: center;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        height: 30px;
+        justify-content: center;
+        margin: 2px;
+        padding: 2px;
+        text-align: center;
+        width: 30px;
+
+        .inner {
+          background-color: $our-gray;
+          border-radius: 50%;
+          height: 18px;
+          padding: 2px;
+          width: 18px;
+
+          &.red {
+            background-color: #f62f5e;
+          }
+
+          &.green {
+            background-color: #7ed321;
+          }
+
+          &.blue {
+            background-color: #6db2fb;
+          }
+
+          &.yellow {
+            background-color: #f9e61c;
+          }
+        }
+
+        &.active {
+          border: 1px solid #7f7f7f;
+
+          &:hover {
+            border: 1px solid #7f7f7f;
+          }
+        }
+
+        &:hover {
+          border: 1px solid rgba($color: #7f7f7f, $alpha: .5);
+        }
+      }
+
+      .custom-slider {
+        width: 100%;
+
+        ::ng-deep {
+          .ng5-slider {
+            margin: 15px 0 15px;
+
+            .ng5-slider-pointer {
+              background-color: $white;
+              border-radius: 16px;
+              height: 14px;
+              top: -5px;
+              width: 14px;
+
+              &::after {
+                background-color: $our-redish;
+                border-radius: 4px;
+                height: 8px;
+                left: 3px;
+                top: 3px;
+                width: 8px;
+              }
+            }
+
+            .ng5-slider-selection {
+              background: $our-redish;
+            }
+
+            .ng5-slider-bubble {
+              bottom: -36px;
+            }
+        }
+      }
+      }
+    }
+  }
+
+  .filter-action {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+
+    .clear-btn {
+      border-radius: 20px;
+      color: $our-redish;
+      cursor: pointer;
+      font-weight: 200;
+      padding: 4px 20px;
+
+      &:hover {
+        background: rgba($our-redish, .5);
+        color: $white;
+      }
+    }
+  }
+}

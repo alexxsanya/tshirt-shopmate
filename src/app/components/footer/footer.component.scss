@@ -1,0 +1,63 @@
+@import '../../../variables';
+
+.app-footer {
+  background: $bg-black;
+  height: 200px;
+  padding: 35px 0;
+  width: 100%;
+
+  .footer-menu {
+    .nav-item {
+      margin: auto 10px;
+      a {
+        color: $white;
+        font-size: 1.2em;
+        font-weight: 300;
+      }
+    }
+  }
+
+  .footer-copyright {
+    .nav-item {
+      a {
+        color: $our-gray;
+        font-size: 1em;
+        font-weight: 200;
+      }
+    }
+  }
+
+  .footer-social {
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
+    width: 100%;
+
+    .social-btn {
+      align-items: center;
+      background-color: $white;
+      border-radius: 20px;
+      cursor: pointer;
+      display: flex;
+      height: 40px;
+      justify-content: center;
+      margin: 0 5px;
+      width: 40px;
+
+      a {
+        line-height: 0;
+      }
+
+      i {
+        color: $bg-black;
+        font-size: 1.2em;
+        vertical-align: middle;
+      }
+
+      &:hover {
+        background-color: $our-gray;
+      }
+    }
+  }
+
+}
