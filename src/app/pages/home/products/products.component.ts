@@ -11,7 +11,7 @@ import * as productsActions from 'src/app/pages/home/products/state/products.act
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
-  productStore: Array<any> = [];
+  productStore: any = {};
   p = 0;
 
   constructor(
