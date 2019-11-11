@@ -12,26 +12,23 @@ import * as productsActions from 'src/app/pages/home/products/state/products.act
 })
 export class ProductsComponent implements OnInit {
   productStore: Array<any> = [];
-  p: number = 0;
+  p = 0;
 
   constructor(
     private ngxService: NgxUiLoaderService,
     private store: Store<any>) { }
 
-  ngOnInit() {
+  async ngOnInit() {
     this.ngxService.startLoader('loader-products');
 
-    this.store.dispatch(new productsActions.LoadProducts());
+    await this.store.dispatch(new productsActions.LoadProducts());
     this.store.subscribe((state) => {
       this.productStore = state.products.products;
-      console.log(this.productStore);
     });
-
-    if (this.productStore.length > 0) {
-      setTimeout(() => {
+    setTimeout(() => {
         this.ngxService.stopLoader('loader-products');
       }, 2000);
-    }
+
   }
 
 }
