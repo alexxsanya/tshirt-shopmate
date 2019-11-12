@@ -43,10 +43,12 @@ export class LoginComponent implements OnInit {
       if (this.userStore.accessToken !== undefined) {
         this.localStorage.set('accessToken', this.userStore.accessToken);
         this.window.reload();
+      } else {
+        console.log(`Login Failed : `, this.userStore );
+        setTimeout(() => {
+          this.ngxService.stopLoader('loader-login');
+        }, 2000);
       }
-      setTimeout(() => {
-        this.ngxService.stopLoader('loader-login');
-      }, 2000);
     });
 
   }
