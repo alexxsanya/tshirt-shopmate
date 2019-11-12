@@ -39,18 +39,19 @@ import { WindowService } from './shared/util/windowService';
 import { SignupComponent } from './components/signup/signup.component';
 import { createdUserReducer } from './components/signup/state/signup.reducers';
 import { SignupEffects } from './components/signup/state/signup.effects';
+import { CartComponent } from './components/cart/cart.component';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   bgsColor: '#f62f5e',
-  fgsColor:'#f62f5e',
+  fgsColor: '#f62f5e',
   bgsPosition: POSITION.bottomCenter,
   bgsSize: 40,
   bgsType: SPINNER.threeStrings,
   fgsType: SPINNER.threeStrings,
   pbDirection: PB_DIRECTION.leftToRight,
   pbThickness: 3,
-  pbColor: "#f62f5e",
-  overlayColor: "rgba(0,0,0,0.7)",
+  pbColor: '#f62f5e',
+  overlayColor: 'rgba(0,0,0,0.7)',
 };
 
 @NgModule({
@@ -66,7 +67,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     FooterComponent,
     SingleItemComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -78,7 +80,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     // If you need to show background spinner, do as follow:
     // NgxUiLoaderRouterModule.forRoot({ showForeground: false })
     BarRatingModule,
-    StoreModule.forRoot({products: productsReducer, product: productReducer, user: userReducer, createduser:createdUserReducer}),
+    StoreModule.forRoot({products: productsReducer, product: productReducer, user: userReducer, createduser: createdUserReducer}),
     StoreDevtoolsModule.instrument(),
     EffectsModule.forRoot([]),
     EffectsModule.forFeature([ProductsEffects, ProductEffects, LoginEffects, SignupEffects]),

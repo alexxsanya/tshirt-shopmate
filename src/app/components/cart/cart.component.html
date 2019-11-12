@@ -1,0 +1,37 @@
+<div class="modal fade" id="cartModalCenter" tabindex="-1" role="dialog" aria-labelledby="cartModalCenterTitle"
+    aria-hidden="true">
+    <ngx-ui-loader [loaderId]="'loader-cart'" [text]="'Processing...'" [textColor]="'#f62f5e'" [hasProgressBar]="true"
+        [overlayColor]="''"></ngx-ui-loader>
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Your Cart</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="loginForm">
+                    <div class="form-group">
+                        <input type="email" class="form-control" formControlName="loginEmail"
+                            aria-describedby="emailHelp" placeholder="Enter email">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                            else.</small>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" formControlName="loginPass" placeholder="Password">
+                    </div>
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+                    </div>
+                    <app-cbutton value="Login" class='md' (click)='loginUser()'></app-cbutton>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <a href='#'>Forgot password?</a>
+                <a href='#'>Have an account</a>
+            </div>
+        </div>
+    </div>
+</div>
