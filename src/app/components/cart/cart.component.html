@@ -1,37 +1,61 @@
-<div class="modal fade" id="cartModalCenter" tabindex="-1" role="dialog" aria-labelledby="cartModalCenterTitle"
+
+<div class="app-cart">
+    <div class="modal fade" id="cartModalCenter" tabindex="-1" role="dialog" aria-labelledby="cartModalCenterTitle"
     aria-hidden="true">
-    <ngx-ui-loader [loaderId]="'loader-cart'" [text]="'Processing...'" [textColor]="'#f62f5e'" [hasProgressBar]="true"
-        [overlayColor]="''"></ngx-ui-loader>
-    <div class="modal-dialog modal-dialog-centered" role="document">
+    <ngx-ui-loader 
+        [loaderId]="'loader-cart'" 
+        [text]="'Processing...'" 
+        [textColor]="'#f62f5e'" 
+        [hasProgressBar]="true"
+        [overlayColor]="''"
+    ></ngx-ui-loader>
+    <div class="modal-dialog modal-dialog-centered cart-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Your Cart</h5>
+                <h5 class="modal-title" id="exampleModalLongTitle">{{cartCount}} Items In Your Cart</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <form [formGroup]="loginForm">
-                    <div class="form-group">
-                        <input type="email" class="form-control" formControlName="loginEmail"
-                            aria-describedby="emailHelp" placeholder="Enter email">
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
-                            else.</small>
+                <div class="no-products" *ngIf='cartCount<1'>
+                    You currently have no product in your cart
+                </div>
+                <div class="container" *ngIf='cartCount>0'>
+                    <div class="row cart-tab-title">
+                        <div class="col col-5">Item</div>
+                        <div class="col">Quantity</div>
+                        <div class="col">Price</div>
                     </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control" formControlName="loginPass" placeholder="Password">
+                    <div  *ngFor='let item of cartItems'>
+                        <div class="row item">
+                            <div class="col col-5">
+                                <div class="row item-detail">
+                                    <div class="col col-3">
+                                        <img src="{{item.thumbnail}}">
+                                    </div>
+                                    <div class="col col-7 item-data">
+                                        <div>{{item.name}}</div>
+                                        <small>x remove</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col cart-qty">{{item.qty}}</div>
+                            <div class="col cart-price">{{item.price | currency:'&#163;' : 'symbol' : '1.0' }}</div>
+                        </div>
+                    </div>                    
+                    <div class="row cart-summary">
+                        <div class="col col-5"></div>
+                        <div class="col">Sub Total</div>
+                        <div class="col cart-price sub-total-price">{{ 88 | currency:'&#163;' : 'symbol' : '1.0' }}</div>
                     </div>
-                    <div class="form-group form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Remember Me</label>
-                    </div>
-                    <app-cbutton value="Login" class='md' (click)='loginUser()'></app-cbutton>
-                </form>
+                </div>
             </div>
             <div class="modal-footer">
-                <a href='#'>Forgot password?</a>
-                <a href='#'>Have an account</a>
+                <app-cbutton value="Bact to Shop" theme='theme2' data-dismiss="modal" ></app-cbutton>
+                <app-cbutton value="Checkout" (click)='loginUser()'></app-cbutton>
             </div>
         </div>
+    </div>
     </div>
 </div>
