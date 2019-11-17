@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Ng5SliderModule } from 'ng5-slider';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -40,6 +40,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { createdUserReducer } from './components/signup/state/signup.reducers';
 import { SignupEffects } from './components/signup/state/signup.effects';
 import { CartComponent } from './components/cart/cart.component';
+import { TokenInterceptorService } from './shared/util/http-interceptor';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   bgsColor: '#f62f5e',
@@ -87,7 +88,11 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     NgxPaginationModule,
     ReactiveFormsModule,
   ],
-  providers: [Actions, EffectsModule, LocalStorageService, WindowService],
+  providers: [Actions, EffectsModule, LocalStorageService, WindowService, {
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptorService,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
