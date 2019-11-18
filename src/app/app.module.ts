@@ -41,6 +41,7 @@ import { createdUserReducer } from './components/signup/state/signup.reducers';
 import { SignupEffects } from './components/signup/state/signup.effects';
 import { CartComponent } from './components/cart/cart.component';
 import { TokenInterceptorService } from './shared/util/http-interceptor';
+import { AuthGuard } from './shared/util/auth.guard';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   bgsColor: '#f62f5e',
@@ -92,7 +93,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptorService,
     multi: true
-  }],
+  }, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
