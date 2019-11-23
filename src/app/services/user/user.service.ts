@@ -24,7 +24,7 @@ export class UserService {
 
   logOut = () => {
     this.localStorage.clear();
-    this.window.goto('home');
+    this.window.goto('/');
   }
 
   getTokenExpirationDate(token: string): Date {
