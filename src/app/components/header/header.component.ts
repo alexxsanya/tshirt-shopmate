@@ -26,7 +26,6 @@ export class HeaderComponent implements OnInit {
     } else {
       this.isLoggedIn = false;
     }
-    console.log(`2. access: ${accessToken} - loggedin: ${this.isLoggedIn}`);
   }
 
   logout() {

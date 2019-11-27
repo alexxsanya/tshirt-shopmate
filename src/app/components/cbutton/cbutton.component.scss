@@ -7,10 +7,22 @@
   font-weight: 500;
   min-width: 130px;
   padding: 4px 20px;
-  transition: background .8s;
+  transition: .8s all;
 
   &:hover {
     background: rgba($our-redish, .5);
+  }
+
+  &.theme2 {
+    background: $white;
+    border-color: $white;
+    color: $our-redish;
+  }
+
+  &.theme2:hover {
+    background: $our-redish;
+    border-color: $white;
+    color: $white;
   }
 
   &:focus,

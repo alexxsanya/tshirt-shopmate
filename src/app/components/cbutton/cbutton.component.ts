@@ -9,6 +9,7 @@ import { isPlatformBrowser } from '@angular/common';
 export class CbuttonComponent implements OnInit {
   @Input() value;
   @Input() link;
+  @Input() theme;
   isBrowser: boolean;
 
   constructor(@Inject(PLATFORM_ID) private platformId) {

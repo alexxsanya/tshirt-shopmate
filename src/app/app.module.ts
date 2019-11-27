@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Ng5SliderModule } from 'ng5-slider';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -39,18 +39,21 @@ import { WindowService } from './shared/util/windowService';
 import { SignupComponent } from './components/signup/signup.component';
 import { createdUserReducer } from './components/signup/state/signup.reducers';
 import { SignupEffects } from './components/signup/state/signup.effects';
+import { CartComponent } from './components/cart/cart.component';
+import { TokenInterceptorService } from './shared/util/http-interceptor';
+import { AuthGuard } from './shared/util/auth.guard';
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
   bgsColor: '#f62f5e',
-  fgsColor:'#f62f5e',
+  fgsColor: '#f62f5e',
   bgsPosition: POSITION.bottomCenter,
   bgsSize: 40,
   bgsType: SPINNER.threeStrings,
   fgsType: SPINNER.threeStrings,
   pbDirection: PB_DIRECTION.leftToRight,
   pbThickness: 3,
-  pbColor: "#f62f5e",
-  overlayColor: "rgba(0,0,0,0.7)",
+  pbColor: '#f62f5e',
+  overlayColor: 'rgba(0,0,0,0.7)',
 };
 
 @NgModule({
@@ -66,7 +69,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     FooterComponent,
     SingleItemComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -78,14 +82,18 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     // If you need to show background spinner, do as follow:
     // NgxUiLoaderRouterModule.forRoot({ showForeground: false })
     BarRatingModule,
-    StoreModule.forRoot({products: productsReducer, product: productReducer, user: userReducer, createduser:createdUserReducer}),
+    StoreModule.forRoot({products: productsReducer, product: productReducer, user: userReducer, createduser: createdUserReducer}),
     StoreDevtoolsModule.instrument(),
     EffectsModule.forRoot([]),
     EffectsModule.forFeature([ProductsEffects, ProductEffects, LoginEffects, SignupEffects]),
     NgxPaginationModule,
     ReactiveFormsModule,
   ],
-  providers: [Actions, EffectsModule, LocalStorageService, WindowService],
+  providers: [Actions, EffectsModule, LocalStorageService, WindowService, {
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptorService,
+    multi: true
+  }, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
