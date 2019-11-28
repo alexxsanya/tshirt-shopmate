@@ -42,27 +42,7 @@ export class CartComponent implements OnInit {
   ngOnInit() {
 
   }
-
-  loginUser = () => {
-    this.ngxService.startLoader('loader-login');
-    const data = {
-      email: this.loginForm.get('loginEmail').value,
-      password: this.loginForm.get('loginPass').value
-    };
-
-    this.store.dispatch(new LoginActions.LoadLogin(data));
-    this.store.subscribe((state) => {
-      this.userStore = state.user.user;
-      if (this.userStore.accessToken !== undefined) {
-        this.localStorage.set('accessToken', this.userStore.accessToken);
-        this.window.reload();
-      } else {
-        console.log(`Login Failed : `, this.userStore );
-        setTimeout(() => {
-          this.ngxService.stopLoader('loader-login');
-        }, 2000);
-      }
-    });
-
+  payWith = (method: string = 'visa') => {
+    alert(`payment with ${method}`);
   }
 }
