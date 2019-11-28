@@ -11,67 +11,128 @@
     ></ngx-ui-loader>
     <div class="modal-dialog modal-dialog-centered cart-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">{{cartCount}} Items In Your Cart</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="no-products" *ngIf='cartCount<1'>
-                    You currently have no product in your cart
-                </div>
-                <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="container" *ngIf='cartCount>0'>
-                                <div class="row cart-tab-title">
-                                    <div class="col col-5">Item</div>
-                                    <div class="col">Quantity</div>
-                                    <div class="col">Price</div>
-                                </div>
-                                <div *ngFor='let item of cartItems'>
-                                    <div class="row item">
-                                        <div class="col col-5">
-                                            <div class="row item-detail">
-                                                <div class="col col-3">
-                                                    <img src="{{item.thumbnail}}">
-                                                </div>
-                                                <div class="col col-7 item-data">
-                                                    <div>{{item.name}}</div>
-                                                    <small>x remove</small>
-                                                </div>
+            <div id="carouselExampleFade" 
+            class="carousel slide carousel-fade" data-ride="carousel" data-interval="false">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">{{cartCount}} Items In Your Cart</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="no-products" *ngIf='cartCount<1'>
+                            You currently have no product in your cart
+                        </div>
+                        <div class="container" *ngIf='cartCount>0'>
+                            <div class="row cart-tab-title">
+                                <div class="col col-5">Item</div>
+                                <div class="col">Quantity</div>
+                                <div class="col">Price</div>
+                            </div>
+                            <div *ngFor='let item of cartItems'>
+                                <div class="row item">
+                                    <div class="col col-5">
+                                        <div class="row item-detail">
+                                            <div class="col col-3">
+                                                <img src="{{item.thumbnail}}">
+                                            </div>
+                                            <div class="col col-7 item-data">
+                                                <div>{{item.name}}</div>
+                                                <small>x remove</small>
                                             </div>
                                         </div>
-                                        <div class="col cart-qty">{{item.qty}}</div>
-                                        <div class="col cart-price">{{item.price | currency:'&#163;' : 'symbol' : '1.0' }}</div>
                                     </div>
-                                </div>
-                                <div class="row cart-summary">
-                                    <div class="col col-5"></div>
-                                    <div class="col">Sub Total</div>
-                                    <div class="col cart-price sub-total-price">{{ 88 | currency:'&#163;' : 'symbol' : '1.0' }}</div>
+                                    <div class="col cart-qty">{{item.qty}}</div>
+                                    <div class="col cart-price">{{item.price | currency:'&#163;' : 'symbol' : '1.0' }}</div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="carousel-item">
-                            <p>Checkout</p>
-                        </div>
-                        <div class="carousel-item">                            
-                            <p>Checkout 2</p>
+                            <div class="row cart-summary">
+                                <div class="col col-5"></div>
+                                <div class="col">Sub Total</div>
+                                <div class="col cart-price sub-total-price">{{ 88 | currency:'&#163;' : 'symbol' : '1.0' }}</div>
+                            </div>
                         </div>
                     </div>
-
+                    <div class="modal-footer">
+                        <a role="button" data-slide="prev">
+                            <app-cbutton value="Bact to Shop" theme='theme2' data-dismiss="modal" ></app-cbutton>
+                        </a>
+                        <a href="#carouselExampleFade" role="button" data-slide="next">
+                            <app-cbutton value="Checkout" role="button"  data-slide="next"></app-cbutton>
+                        </a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Payment Details</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="card bg-dark text-white" (click)="payWith('visa')">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Visa.svg/1200px-Visa.svg.png" class="card-img" alt="...">
+                                        <div class="card-footer text-muted">
+                                            <span class="card-title">VISA CARD</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">                              
+                                    <div class="card bg-dark text-white" (click)="payWith('master')">
+                                        <img src="https://pentagram-production.imgix.net/ee458d4d-a8e8-4177-b2a8-97df766e2e99/lh_mb_mastercard_02.jpg?w=640&crop=1&fm=jpg&q=70&auto=format&fit=crop&h=400" class="card-img" alt="...">
+                                        <div class="card-footer text-muted">
+                                            <span class="card-title">MASTER CARD</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">                              
+                                        <div class="card bg-dark text-white" (click)="payWith('mmoney')">
+                                            <img src="https://chimpreports.com/wp-content/uploads/2019/08/MoMo.jpg" class="card-img" alt="...">
+                                            <div class="card-footer text-muted">
+                                                <span class="card-title">MOBILE MONEY</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#carouselExampleFade" role="button" data-slide="prev">
+                            <app-cbutton value="Go Back" theme='theme2'></app-cbutton>
+                        </a>
+                        <a href="#carouselExampleFade" role="button" data-slide="next">
+                            <app-cbutton value="Next" role="button"></app-cbutton>
+                        </a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">
+                            Order Summary
+                        </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Order Summary</p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#carouselExampleFade" role="button" data-slide="prev">
+                            <app-cbutton value="Back" theme='theme2'></app-cbutton>
+                        </a>
+                        <a href="#carouselExampleFade" role="button" data-slide="next">
+                            <app-cbutton value="Confirm Order" role="button"  data-slide="next"></app-cbutton>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="modal-footer">
-                <a role="button" data-slide="prev">
-                    <app-cbutton value="Bact to Shop" theme='theme2' data-dismiss="modal" ></app-cbutton>
-                </a>
-                <a href="#carouselExampleFade" role="button" data-slide="next">
-                    <app-cbutton value="Checkout" role="button"  data-slide="next"></app-cbutton>
-                </a>
-            </div>
+        </div>
         </div>
     </div>
     </div>

@@ -18,7 +18,15 @@
     border: none;
     padding-left: 1.4rem;
   }
-
+  .card {
+    cursor: pointer;
+  }
+  .card-img {
+    height: 150px;
+  }
+  .card-img-overlay {
+    color: #444;
+  }
   .modal-dialog {
     .modal-content {
       .modal-title {
